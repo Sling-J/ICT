@@ -48,8 +48,24 @@ class SpecialtyDetailView(View):
 class StaffView(View):
    def get(self, request):
       user_1 = User.objects.get(id=1)
+      dekan = User.objects.get(username='shaikhanova')
+      zam_dekana = User.objects.get(username='adylkanova')
+      zaf_kafedry = User.objects.get(username='zolotov')
+      ospanov = User.objects.get(username='ospanov')
+      sekerbaeva = User.objects.get(username='sekerbaeva')
+      myassoedov = User.objects.get(username='myassoedov')
+      kurushbaeva = User.objects.get(username='kurushbaeva')
+      nazarov = User.objects.get(username='nazarov')
       return render(request, 'ICTapp/staff.html', context={
          'user_1': user_1,
+         'dekan': dekan,
+         'zam_dekana': zam_dekana,
+         'zaf_kafedry': zaf_kafedry,
+         'ospanov': ospanov,
+         'sekerbaeva': sekerbaeva,
+         'myassoedov': myassoedov,
+         'kurushbaeva': kurushbaeva,
+         'nazarov': nazarov,
       })
 
 

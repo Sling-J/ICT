@@ -53,57 +53,20 @@
             
             <div class="teachers-box__item">
                <div class="teachers-box__img uk-inline">
-                  <img src="/media/img/teacher_2.jpg" alt="ИКТ-учителя">
+                  <img src="{{ dekan.profile.img.url }}" alt="ИКТ-учителя">
 
-                  <a class="teachers-overlay-link transition" href="#">
+                  <a class="teachers-overlay-link transition" href="{{ dekan.profile.get_absolute_url }}">
                      <div class="uk-overlay-primary uk-position-cover">
                         <div class="uk-position-center">
-                           <p href="#">Подробнее</p>
+                           <p>Подробнее</p>
                         </div>
                      </div>
                   </a>
                </div>
 
                <div class="teachers-box__desc">
-                  <h3 class="text-title teachers-box__name">Christian Blue</h3>
-                  <p class="text-desc teachers-box__job">Graphic Designer</p>
-                  
-                  <div class="teachers-box__links">
-                     <a class="transition" href="#">
-                        <i class="fa fa-pinterest" aria-hidden="true"></i>
-                     </a>
-                     <a class="transition" href="#">
-                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                     </a>
-                     <a class="transition" href="#">
-                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                     </a>
-                     <a class="transition" href="#">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                     </a>
-                     <a class="transition" href="#">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                     </a>
-                  </div>
-               </div>
-            </div>
-
-            <div class="teachers-box__item">
-               <div class="teachers-box__img uk-inline">
-                  <img src="/media/img/teacher_3.jpg" alt="ИКТ-учителя">
-
-                  <a class="teachers-overlay-link transition" href="#">
-                     <div class="uk-overlay-primary uk-position-cover">
-                        <div class="uk-position-center">
-                           <p href="#">Подробнее</p>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-
-               <div class="teachers-box__desc">
-                  <h3 class="text-title teachers-box__name">James Brown</h3>
-                  <p class="text-desc teachers-box__job">Graphic Designer</p>
+                  <h3 class="text-title teachers-box__name">{{ dekan.get_full_name }}</h3>
+                  <p class="text-desc teachers-box__job">{{ dekan.profile.position }}</p>
                   
                   <div class="teachers-box__links">
                      <a href="#">
@@ -127,20 +90,20 @@
 
             <div class="teachers-box__item">
                <div class="teachers-box__img uk-inline">
-                  <img src="/media/img/teacher_4.jpg" alt="ИКТ-учителя">
+                  <img src="{{ zam_dekana.profile.img.url }}" alt="ИКТ-учителя">
 
-                  <a class="teachers-overlay-link transition" href="#">
+                  <a class="teachers-overlay-link transition" href="{{ zam_dekana.profile.get_absolute_url }}">
                      <div class="uk-overlay-primary uk-position-cover">
                         <div class="uk-position-center">
-                           <p href="#">Подробнее</p>
+                           <p>Подробнее</p>
                         </div>
                      </div>
                   </a>
                </div>
 
                <div class="teachers-box__desc">
-                  <h3 class="text-title teachers-box__name">Julie Denver</h3>
-                  <p class="text-desc teachers-box__job">Graphic Designer</p>
+                  <h3 class="text-title teachers-box__name">{{ zam_dekana.get_full_name }}</h3>
+                  <p class="text-desc teachers-box__job">{{ zam_dekana.profile.position }}</p>
                   
                   <div class="teachers-box__links">
                      <a href="#">
@@ -164,20 +127,20 @@
 
             <div class="teachers-box__item">
                <div class="teachers-box__img uk-inline">
-                  <img src="/media/img/teacher_5.jpg" alt="ИКТ-учителя">
+                  <img src="{{ zaf_kafedry.profile.img.url }}" alt="ИКТ-учителя">
 
-                  <a class="teachers-overlay-link transition" href="#">
+                  <a class="teachers-overlay-link transition" href="{{ zaf_kafedry.profile.get_absolute_url }}">
                      <div class="uk-overlay-primary uk-position-cover">
                         <div class="uk-position-center">
-                           <p href="#">Подробнее</p>
+                           <p>Подробнее</p>
                         </div>
                      </div>
                   </a>
                </div>
 
                <div class="teachers-box__desc">
-                  <h3 class="text-title teachers-box__name">Julie Denver</h3>
-                  <p class="text-desc teachers-box__job">Graphic Designer</p>
+                  <h3 class="text-title teachers-box__name">{{ zaf_kafedry.get_full_name }}</h3>
+                  <p class="text-desc teachers-box__job">{{ zaf_kafedry.profile.position }}</p>
                   
                   <div class="teachers-box__links">
                      <a href="#">
@@ -201,20 +164,20 @@
 
             <div class="teachers-box__item">
                <div class="teachers-box__img uk-inline">
-                  <img src="/media/img/teacher_6.jpg" alt="ИКТ-учителя">
+                  <img src="{{ ospanov.profile.img.url }}" alt="ИКТ-учителя">
 
-                  <a class="teachers-overlay-link transition" href="#">
+                  <a class="teachers-overlay-link transition" href="{{ ospanov.profile.get_absolute_url }}">
                      <div class="uk-overlay-primary uk-position-cover">
                         <div class="uk-position-center">
-                           <p href="#">Подробнее</p>
+                           <p>Подробнее</p>
                         </div>
                      </div>
                   </a>
                </div>
 
                <div class="teachers-box__desc">
-                  <h3 class="text-title teachers-box__name">Julie Denver</h3>
-                  <p class="text-desc teachers-box__job">Graphic Designer</p>
+                  <h3 class="text-title teachers-box__name">{{ ospanov.get_full_name }}</h3>
+                  <p class="text-desc teachers-box__job">{{ ospanov.profile.position }}</p>
                   
                   <div class="teachers-box__links">
                      <a href="#">
@@ -235,6 +198,158 @@
                   </div>
                </div>
             </div>
+
+
+            <div class="teachers-box__item">
+               <div class="teachers-box__img uk-inline">
+                  <img src="{{ sekerbaeva.profile.img.url }}" alt="ИКТ-учителя">
+
+                  <a class="teachers-overlay-link transition" href="{{ sekerbaeva.profile.get_absolute_url }}">
+                     <div class="uk-overlay-primary uk-position-cover">
+                        <div class="uk-position-center">
+                           <p>Подробнее</p>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+
+               <div class="teachers-box__desc">
+                  <h3 class="text-title teachers-box__name">{{ sekerbaeva.get_full_name }}</h3>
+                  <p class="text-desc teachers-box__job">{{ sekerbaeva.profile.position }}</p>
+                  
+                  <div class="teachers-box__links">
+                     <a href="#">
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+
+            <div class="teachers-box__item">
+               <div class="teachers-box__img uk-inline">
+                  <img src="{{ myassoedov.profile.img.url }}" alt="ИКТ-учителя">
+
+                  <a class="teachers-overlay-link transition" href="{{ myassoedov.profile.get_absolute_url }}">
+                     <div class="uk-overlay-primary uk-position-cover">
+                        <div class="uk-position-center">
+                           <p>Подробнее</p>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+
+               <div class="teachers-box__desc">
+                  <h3 class="text-title teachers-box__name">{{ myassoedov.get_full_name }}</h3>
+                  <p class="text-desc teachers-box__job">{{ myassoedov.profile.position }}</p>
+                  
+                  <div class="teachers-box__links">
+                     <a href="#">
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+
+            <div class="teachers-box__item">
+               <div class="teachers-box__img uk-inline">
+                  <img src="{{ kurushbaeva.profile.img.url }}" alt="ИКТ-учителя">
+
+                  <a class="teachers-overlay-link transition" href="{{ kurushbaeva.profile.get_absolute_url }}">
+                     <div class="uk-overlay-primary uk-position-cover">
+                        <div class="uk-position-center">
+                           <p>Подробнее</p>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+
+               <div class="teachers-box__desc">
+                  <h3 class="text-title teachers-box__name">{{ kurushbaeva.get_full_name }}</h3>
+                  <p class="text-desc teachers-box__job">{{ kurushbaeva.profile.position }}</p>
+                  
+                  <div class="teachers-box__links">
+                     <a href="#">
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+
+
+            <div class="teachers-box__item">
+               <div class="teachers-box__img uk-inline">
+                  <img src="{{ nazarov.profile.img.url }}" alt="ИКТ-учителя">
+
+                  <a class="teachers-overlay-link transition" href="{{ nazarov.profile.get_absolute_url }}">
+                     <div class="uk-overlay-primary uk-position-cover">
+                        <div class="uk-position-center">
+                           <p>Подробнее</p>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+
+               <div class="teachers-box__desc">
+                  <h3 class="text-title teachers-box__name">{{ nazarov.get_full_name }}</h3>
+                  <p class="text-desc teachers-box__job">{{ nazarov.profile.position }}</p>
+                  
+                  <div class="teachers-box__links">
+                     <a href="#">
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+
+   
          </div>
       </div>
    </section>
