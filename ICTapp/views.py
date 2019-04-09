@@ -7,7 +7,7 @@ from News.models import Post
 
 
 def home(request):
-   posts = Post.objects.filter().order_by('-date')[:7]
+   posts = Post.objects.filter().order_by('-date')[:4]
    return render(request, 'ICTapp/index.html', context={
       'posts': posts,
    })

@@ -407,7 +407,7 @@ nav .menu {
 }
 
 .register-desc {
-   line-height: 2.29;
+   line-height: 1.5;
    margin-bottom: 45px;
 }
 
@@ -466,7 +466,7 @@ nav .menu {
 
 .testimonials {
    padding: 110px 0 80px;
-   background: url('/media/img/testimonials_background_2.jpg');
+   background: url('/media/youtube-education.jpg');
    color: #fff;
    background-size: cover;
    background-repeat: no-repeat;
@@ -1001,6 +1001,8 @@ footer .section-title {
    margin-bottom: 20px;
 }
 
+.post-update-form input,
+.post-update-form textarea,
 .add-post-form input[type="text"],
 .add-post-form textarea,
 .edit-profile-form input,

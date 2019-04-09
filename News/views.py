@@ -29,7 +29,7 @@ class ShowNewsView(ListView):
    template_name = 'News/news.html'
    context_object_name = 'posts'
    ordering = ['-date']
-   paginate_by = 2
+   paginate_by = 3
 
    def get_context_data(self, **kwargs):
       ctx = super(ShowNewsView, self).get_context_data(**kwargs)
@@ -63,7 +63,7 @@ class NewsDetailView(View):
 
 class CreateNewsView(LoginRequiredMixin, CreateView):
    model = Post
-   fields = ('title', 'text', 'img')
+   fields = ('title', 'text', 'img', 'img_1', 'img_2', 'img_3', 'img_4')
 
    def form_valid(self, form):
       form.instance.author = self.request.user
@@ -73,7 +73,7 @@ class CreateNewsView(LoginRequiredMixin, CreateView):
 class UpdateNewsView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
    model = Post
    template_name = 'News/post_update.html'
-   fields = ('title', 'text', 'img')
+   fields = ('title', 'text', 'img', 'img_1', 'img_2', 'img_3', 'img_4')
 
    def form_valid(self, form):
       form.instance.author = self.request.user

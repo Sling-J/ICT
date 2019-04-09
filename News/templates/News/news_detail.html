@@ -27,56 +27,61 @@
                      <div class="news-box__img news-desc-margin-b">
                         <img src="{{ post.img.url }}" alt="news">
                      </div>
-                     <div class="news-box__img-container flex j-sb flex-wrap" uk-lightbox="animation: slide">
-                        <div class="news-img-container__item">
-                           <a class="uk-inline uk-dark" href="/media/img/event_1.jpg" data-caption="Актовый зал">
-                              <img class="new-img-container__pic" src="/media/img/event_1.jpg" alt="ИКТ студенческая жизнь">
-
-                              <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
-                                 <div class="uk-position-center">
-                                    <span uk-overlay-icon></span>
-                                 </div>
-                              </div>
-                           </a>
-                        </div>
-                        
-                        <div class="news-img-container__item">
-                           <a class="uk-inline uk-dark" href="/media/img/event_2.jpg" data-caption="Библиотека">
-                              <img src="/media/img/event_2.jpg" alt="ИКТ студенческая жизнь">
-                              
-                              <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
-                                 <div class="uk-position-center">
-                                    <span uk-overlay-icon></span>
-                                 </div>
-                              </div>
-                           </a>
-                        </div>
-
-                        <div class="news-img-container__item">
-                           <a class="uk-inline uk-dark" href="/media/img/event_3.jpg" data-caption="Довольная девушка">
-                              <img src="/media/img/event_3.jpg" alt="ИКТ студенческая жизнь">
-                              
-                              <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
-                                 <div class="uk-position-center">
-                                    <span uk-overlay-icon></span>
-                                 </div>
-                              </div>
-                           </a>
-                        </div>
-
-                        <div class="news-img-container__item">
-                           <a class="uk-inline uk-dark" href="/media/img/event_1.jpg" data-caption="Еще зал">
-                              <img src="/media/img/event_1.jpg" alt="ИКТ студенческая жизнь">
-                              
-                              <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
-                                 <div class="uk-position-center">
-                                    <span uk-overlay-icon></span>
-                                 </div>
-                              </div>
-                           </a>
-                        </div>
-                     </div>
                   {% endif %}
+                  <div class="news-box__img-container flex j-sb flex-wrap" uk-lightbox="animation: slide">
+                     {% if post.img_1 %}
+                        <div class="news-img-container__item">
+                           <a class="uk-inline uk-dark" href="{{ post.img_1.url }}" data-caption="">
+                              <img class="new-img-container__pic" src="{{ post.img_1.url }}" alt="ИКТ">
+
+                              <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
+                                 <div class="uk-position-center">
+                                    <span uk-overlay-icon></span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                     {% endif %}
+                     {% if post.img_2 %}
+                        <div class="news-img-container__item">
+                           <a class="uk-inline uk-dark" href="{{ post.img_2.url }}" data-caption="">
+                              <img src="{{ post.img_2.url }}" alt="ИКТ">
+                              
+                              <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
+                                 <div class="uk-position-center">
+                                    <span uk-overlay-icon></span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                     {% endif %}
+                     {% if post.img_3 %}
+                        <div class="news-img-container__item">
+                           <a class="uk-inline uk-dark" href="{{ post.img_3.url }}" data-caption="">
+                              <img src="{{ post.img_3.url }}" alt="ИКТ">
+                              
+                              <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
+                                 <div class="uk-position-center">
+                                    <span uk-overlay-icon></span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                     {% endif %}
+                     {% if post.img_4 %}
+                        <div class="news-img-container__item">
+                           <a class="uk-inline uk-dark" href="{{ post.img_4.url }}" data-caption="">
+                              <img src="{{ post.img_4.url }}" alt="ИКТ">
+                              
+                              <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
+                                 <div class="uk-position-center">
+                                    <span uk-overlay-icon></span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                     {% endif %}
+                     </div>
                   <div class="news-box__container flex">
                      <div>
                         <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
@@ -109,25 +114,6 @@
                   </div>
 
                   <p class="text-desc news-box__desc news-desc-margin-b">{{ post.text|safe }}</p>
-                              
-                  <!-- <p class="news-detail__quote">
-                     Etiam eu purus nec eros varius luctus. Praesent finibus risus 
-                     facilisis ultricies venena tis. Suspendisse fermentum sodales 
-                     lacus, lacinia gravida elit.
-                  </p>
-
-                  <p class="text-desc news-box__desc news-desc-margin-t">
-                     In aliquam, augue a gravida rutrum, ante nisl fermentum nulla,
-                     vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, 
-                     finibus tortor fermentum. Etiam eu purus nec eros varius luctus. 
-                     Praesent finibus risus facilisis ultricies. Etiam eu purus nec 
-                     eros varius luctus. Praesent finibus risus facilisis ultricies 
-                     venenatis. Suspendisse fermentum sodales lacus, lacinia gravida 
-                     elit dapibus sed. Cras in lectus elit. Maecenas tempus nunc vitae 
-                     mi egestas venenatis. Aliquam rhoncus, purus in vehicula porttitor, 
-                     lacus ante consequat purus, id elementum enim purus nec enim. 
-                     In sed odio rhoncus, tristique ipsum id, pharetra neque.
-                  </p> -->
 
                   <h3 class="text-title news-detail__comment">Комментарий</h3>
 

@@ -8,6 +8,10 @@ class Post(models.Model):
    title = models.CharField(max_length=100)
    text = models.TextField()
    img = models.ImageField(upload_to='posts_images', blank=True)
+   img_1 = models.ImageField(upload_to='posts_images', blank=True)
+   img_2 = models.ImageField(upload_to='posts_images', blank=True)
+   img_3 = models.ImageField(upload_to='posts_images', blank=True)
+   img_4 = models.ImageField(upload_to='posts_images', blank=True)
    date = models.DateTimeField(default=timezone.now)
 
    def __str__(self):
