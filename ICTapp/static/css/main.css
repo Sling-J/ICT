@@ -11,6 +11,14 @@
    width: 100%;
 }
 
+.teachers.section,
+.events.section,
+.specialty.section,
+.talents.section,
+.news-section.section {
+   margin: 80px 0;
+}
+
 /* ------------------------------ Partials ------------------------------ */
 
 .text-decor-none,
@@ -81,7 +89,6 @@
 /* ------------------------------ Index ------------------------------ */
 
 header {
-   background: url('/media/img/slider_background.jpg');
    height: 100vh;
    background-size: cover;
    -webkit-transition: all 1s;
@@ -742,7 +749,6 @@ footer .section-title {
 }
 
 .news-header {
-   background: url('/media/background-images/news-bg.jpg');
    background-repeat: no-repeat;
    background-size: cover;
    text-align: center;
@@ -764,7 +770,7 @@ footer .section-title {
 }
 
 .news-box__item {
-   margin-bottom: 60px;
+   margin-bottom: 80px;
 }
 
 .news-comment-box__item:last-child,
@@ -974,6 +980,20 @@ footer .section-title {
    margin: 0;
 }
 
+.add-post-form input[type="file"] {
+   width: 100%;
+   padding: 30px 30px;
+   background: 0 0;
+   border: 1px dashed #e5e5e5;
+}
+
+.add-post-form progress {
+   margin: 0;
+   margin-bottom: 20px;
+}
+
+.add-post-form input[type="text"],
+.add-post-form textarea,
 .edit-profile-form input,
 .add-comment-form input,
 .add-comment-form textarea,
@@ -1247,7 +1267,7 @@ footer .section-title {
 
 .teachers-detail-info-container {
    max-width: 750px;
-   padding-top: 2.5%;
+   padding-top: 3.5%;
    margin-left: 6.5%;
 }
 
@@ -1261,7 +1281,7 @@ footer .section-title {
    display: block;
    color: #ffb606;
    text-transform: uppercase;
-   line-height: 25px;
+   line-height: 38px;
    font-weight: 600;
 }
 

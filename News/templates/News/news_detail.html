@@ -2,7 +2,7 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-   <div class="news-header">      
+   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/news-bg.jpg">      
       <h1>Новости</h1>
    </div>
 
@@ -11,7 +11,7 @@
          <ul class="uk-breadcrumb breadcrumb">
             <li><a href="{% url 'home_url' %}">Главная</a></li>
             <li><a href="{% url 'news_url' %}">Новости</a></li>
-            <li><span>Подробные новости</span></li>
+            <li><span>{{ post.title }}</span></li>
          </ul>
          <div class="news-wrap flex j-sb">
             <div class="news-box">

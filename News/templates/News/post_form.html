@@ -16,8 +16,7 @@
                {% endfor %}
             {% endif %}
          </div>
-         <div style="padding-top: 50px;" class="profile">
-            <h2>Добавление Поста</h2>
+         <div class="profile">
             <form class="add-post-form" method="POST" enctype="multipart/form-data">
                {% csrf_token %}
                {{ form.as_p }}
