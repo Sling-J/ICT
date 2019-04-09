@@ -20,7 +20,11 @@ def informations(request):
 class InformationDetailView(View):
    def get(self, request, pk):
       information = get_object_or_404(Information, pk=pk)
-      return render(request, 'ICTapp/information_detail.html', context={'information': information})
+      latest_news = Post.objects.filter().order_by('-date')[:3]
+      return render(request, 'ICTapp/information_detail.html', context={
+         'information': information,
+         'latest_news': latest_news,
+      })
 
 
 class SpecialtyView(View):
@@ -34,7 +38,11 @@ class SpecialtyView(View):
 class SpecialtyDetailView(View):
    def get(self, request, slug):
       speciality = get_object_or_404(Specialty, slug=slug)
-      return render(request, 'ICTapp/specialty_detail.html', context={'speciality': speciality})
+      latest_news = Post.objects.filter().order_by('-date')[:3]
+      return render(request, 'ICTapp/specialty_detail.html', context={
+         'speciality': speciality,
+         'latest_news': latest_news,
+      })
 
 
 class StaffView(View):

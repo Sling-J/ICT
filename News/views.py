@@ -31,20 +31,22 @@ class ShowNewsView(ListView):
    ordering = ['-date']
    paginate_by = 5
 
-   # def get_context_data(self, **kwargs):
-   #    ctx = super(ShowNewsView, self).get_context_data(**kwargs)
-   #    ctx['title'] = 'Главная страница блога'
-   #    return ctx 
+   def get_context_data(self, **kwargs):
+      ctx = super(ShowNewsView, self).get_context_data(**kwargs)
+      ctx['latest_news'] = Post.objects.filter().order_by('-date')[:3]
+      return ctx 
 
 class NewsDetailView(View):
    def get(self, request, pk):
       post = get_object_or_404(Post, pk=pk)
+      latest_news = Post.objects.filter().order_by('-date')[:3]
       comments = Comment.objects.filter(post=post, approved=True).order_by('-date')
       comment_form = CommentForm()
       return render(request, 'News/news_detail.html', context={
          'post': post,
          'comments': comments,
          'comment_form': comment_form,
+         'latest_news': latest_news,
       })
    def post(self, request, pk):
       post = get_object_or_404(Post, pk=pk)

@@ -279,7 +279,11 @@
                {% for post in posts %}
                   <li class="uk-width-1-2">
                      <div class="uk-panel">
-                        <img src="{{ post.img.url }}" alt="ИКТ-новости">
+                        {% if post.img %}
+                           <img src="{{ post.img.url }}" alt="ИКТ-новости">
+                        {% else %}
+                        <img src="/media/post.jpg" alt="ИКТ-новости">
+                        {% endif %}
                         <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
                            <h3 class="uk-margin-remove">{{ post.title }}</h3>
                            <p class="uk-margin-remove">{{ post.text|truncatechars:30 }}</p>

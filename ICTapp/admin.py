@@ -6,4 +6,6 @@ admin.site.register(Information)
 admin.site.register(Specialty)
 admin.site.register(Discipline)
 
-admin.site.register(Question)
+@admin.register(Question)
+class QuestionAdmin(admin.ModelAdmin):
+   list_display = ['full_name', 'email', 'phone', 'text']
