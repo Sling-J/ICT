@@ -29,7 +29,7 @@ class ShowNewsView(ListView):
    template_name = 'News/news.html'
    context_object_name = 'posts'
    ordering = ['-date']
-   paginate_by = 5
+   paginate_by = 2
 
    def get_context_data(self, **kwargs):
       ctx = super(ShowNewsView, self).get_context_data(**kwargs)

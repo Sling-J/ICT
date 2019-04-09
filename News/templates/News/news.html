@@ -64,6 +64,29 @@
                      <a class="text-decor-none news-box__more transition" href="{{ post.get_absolute_url }}">Читать далее</a>
                   </div>
                {% endfor %}
+               
+
+               {% if is_paginated %}
+                  {% if page_obj.has_previous %}
+                     <a href="{% url 'news_url' %}" class="btn btn-outline-warning">Начало</a>
+                     <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-warning">Предыдущая</a>
+                  {% endif %}
+
+                  {% for num in page_obj.paginator.page_range %}
+                     {% if num ==  page_obj.number %}
+                        <button class="btn btn-warning">{{ num }}</button>
+                     {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <a href="?page={{ num }}" class="btn btn-outline-warning">{{ num }}</a>
+                     {% endif %}
+                  {% endfor %}
+
+                  {% if page_obj.has_next %}
+                     <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-warning">Следующая</a>
+                     <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-warning">Последняя</a>
+                  {% endif %}
+               {% endif %}
+
+
             </div>
 
             {% include 'includes/latest_news.html' %}
