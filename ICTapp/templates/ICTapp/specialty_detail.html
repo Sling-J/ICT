@@ -18,7 +18,7 @@
             </ul>
 
             <div class="specialty-box">
-               <p>Стоимость обучение - 304000 тг</p>
+               <p>Стоимость обучения в год - <strong>{{ speciality.price }}тг</strong></p>
                <ul class="uk-tab-bottom" uk-tab>
                   <li class="uk-active"><a href="#">Описание программы</a></li>
                   <li><a href="#">Основные дисциплины</a></li>
@@ -29,18 +29,19 @@
                      <dl class="uk-description-list">
                         <dt class="specialty-box__desc-title">Описание</dt>
                         <dd>
-                           {{ speciality.description }} 
+                           {{ speciality.description|safe }} 
                         </dd>
 
                         <dt class="specialty-box__desc-title">Цель</dt>
                         <dd>
                            {{ speciality.purpose|safe }}
                         </dd>
-
-                        <dt class="specialty-box__desc-title">Задачи</dt>
-                        <dd class="border-none">
-                           {{ speciality.tasks|safe }}
-                        </dd>
+                        {% if speciality.tasks %}
+                           <dt class="specialty-box__desc-title">Задачи</dt>
+                           <dd class="border-none">
+                              {{ speciality.tasks|safe }}
+                           </dd>
+                        {% endif %}
                      </dl>
                   </li>
                   <li>

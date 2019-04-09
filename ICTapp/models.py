@@ -24,10 +24,11 @@ class Information(models.Model):
 class Specialty(models.Model):
    name = models.CharField(max_length=100)
    slug = models.SlugField()
-   description = models.TextField()
-   purpose = models.TextField()
-   tasks = models.TextField()
-   perspectives = models.TextField()
+   price = models.IntegerField()
+   description = models.TextField(blank=True)
+   purpose = models.TextField(blank=True)
+   tasks = models.TextField(blank=True)
+   perspectives = models.TextField(blank=True)
    img = models.ImageField(upload_to='Specialty_images', blank=True)
 
    def __str__(self):
