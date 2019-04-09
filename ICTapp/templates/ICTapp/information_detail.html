@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% block title %}ICT - Жизнь в университете{% endblock %}
+
+{% block content %}
+   <div class="news-header">
+      <h1>Жизнь в университете</h1>
+   </div>
+
+   <section id="news-section" class="news-section section">
+      <div class="wrapper">
+         <ul class="uk-breadcrumb breadcrumb">
+            <li><a href="{% url 'home_url' %}">Главная</a></li>
+            <li><a href="{% url 'informations_url' %}">Жизнь в университете</a></li>
+            <li><span>Актовый зал</span></li>
+         </ul>
+
+         <div class="news-wrap flex j-sb">
+            <div class="news-box">
+               <div class="news-box__item">
+                  {% if information.img_main %}
+                     <div class="news-box__img news-desc-margin-b">
+                        <div uk-lightbox>
+                           <a href="/media/img/event_1.jpg" data-caption="Актовый зал">
+                              <img src="{{ information.img_main.url }}" alt="ИКТ студенческая жизнь">
+                           </a>
+                        </div>
+                     </div>
+
+                     <div class="news-box__img-container flex j-sb flex-wrap" uk-lightbox="animation: slide">
+                        <div class="news-img-container__item">
+                           <a class="uk-inline uk-dark" href="/media/img/event_1.jpg" data-caption="Актовый зал">
+                              <img class="new-img-container__pic" src="/media/img/event_1.jpg" alt="ИКТ студенческая жизнь">
+
+                              <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
+                                 <div class="uk-position-center">
+                                    <span uk-overlay-icon></span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="news-img-container__item">
+                           <a class="uk-inline uk-dark" href="/media/img/event_2.jpg" data-caption="Библиотека">
+                              <img src="/media/img/event_2.jpg" alt="ИКТ студенческая жизнь">
+                              
+                              <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
+                                 <div class="uk-position-center">
+                                    <span uk-overlay-icon></span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="news-img-container__item">
+                           <a class="uk-inline uk-dark" href="/media/img/event_3.jpg" data-caption="Довольная девушка">
+                              <img src="/media/img/event_3.jpg" alt="ИКТ студенческая жизнь">
+                              
+                              <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
+                                 <div class="uk-position-center">
+                                    <span uk-overlay-icon></span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="news-img-container__item">
+                           <a class="uk-inline uk-dark" href="/media/img/event_1.jpg" data-caption="Еще зал">
+                              <img src="/media/img/event_1.jpg" alt="ИКТ студенческая жизнь">
+                              
+                              <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
+                                 <div class="uk-position-center">
+                                    <span uk-overlay-icon></span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                     </div>
+                  {% endif %}
+                  <div class="news-box__container flex information-box__container">
+                     <p class="news-box__date">16 <span>Регион</span></p>
+   
+                     <div class="news-box__title">
+                        <a>{{ information.title }}</a>
+                        <p class="news-box__author">{{ information.location }}</p>
+                     </div>
+                  </div>
+
+                  <p class="text-desc news-box__desc news-desc-margin-b">{{ information.text|safe }}</p>
+               </div>
+            </div>
+            
+            <div class="news-more">
+               <h3 class="text-title news-more__title">Последние новости</h3>
+
+               <div class="news-more-box">
+                  <div class="news-more__item">
+                     <div class="news-more__img">
+                        <img src="/media/img/latest_1.jpg" alt="news">
+                     </div>
+
+                     <a class="text-decor-none news-more__link" href="new-post.html">
+                        Why do you need a qualification?
+                     </a>
+                     
+                     <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+                  </div>
+
+                  <div class="news-more__item">
+                     <div class="news-more__img">
+                        <img src="/media/img/latest_2.jpg" alt="news">
+                     </div>
+
+                     <a class="text-decor-none news-more__link" href="new-post.html">
+                        Why do you need a qualification?
+                     </a>
+                     
+                     <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+                  </div>
+
+                  <div class="news-more__item">
+                     <div class="news-more__img">
+                        <img src="/media/img/latest_3.jpg" alt="news">
+                     </div>
+
+                     <a class="text-decor-none news-more__link" href="new-post.html">
+                        Why do you need a qualification?
+                     </a>
+                     
+                     <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+{% endblock content %}

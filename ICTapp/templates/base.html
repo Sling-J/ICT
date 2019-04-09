@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=cyrillic-ext" rel="stylesheet">
+   <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+   <link rel="stylesheet" href="{% static 'css/main.css' %}">
+   <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
+   <link rel="shortcut icon" href="/media/3.ico" type="image/png">
+   <script src="{% static 'js/uikit.min.js' %}"></script>
+   {% block links %}{% endblock %}
+   <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+   <nav class="flex j-sb flex-align-center">
+      <div class="logo">
+         <a class="text-decor-none transition" href="{% url 'home_url' %}">ICT</a>
+      </div>
+
+      <ul class="menu flex">
+         <li class="menu_item">
+            <a href="{% url 'home_url' %}" class="menu_link transition text-decor-none text-decor-none">Главная</a>
+         </li>
+         <li class="menu_item">
+            <a href="{% url 'news_url' %}" class="menu_link transition text-decor-none">Новости</a>
+         </li>
+         <li class="menu_item">
+            <a href="{% url 'specialty_url' %}" class="menu_link transition text-decor-none">Специальности</a>
+         </li>
+         <li class="menu_item">
+            <a href="{% url 'informations_url' %}" class="menu_link transition text-decor-none">Жизнь в университете</a>
+         </li>
+         <li class="menu_item">
+            <a href="{% url 'staff_url' %}" class="menu_link transition text-decor-none">Персонал</a>
+         </li>
+         <li class="menu_item">
+            <a href="#footer" class="menu_link transition text-decor-none" uk-scroll>Контакты</a>  
+         </li>
+      </ul>
+      <div class="auth-box">
+         {% if user.is_authenticated %}
+            <p class="auth-box-true">
+               <a href="{% url 'profile_url' %}" class="text-decor-none transition">Профиль</a>
+               <br>
+               <a href="{% url 'sign_out_url' %}" class="text-decor-none transition">Выйти</a>
+            </p>
+         {% else %}
+            <p class="auth-box-false">
+               <a href="{% url 'sign_in_url' %}" class="text-decor-none transition">Авторизоваться</a>
+            </p>
+         {% endif %}
+      </div>
+   </nav>
+   {% block content %}
+   {% endblock content %}
+   <footer id="footer">
+      <div class="wrapper">
+         {% if messages %}
+            {% for mess in messages %}
+               <div>
+                  {{ mess }}
+               </div>
+            {% endfor %}
+         {% endif %}
+         <h2 class="section-title">Задайте вопрос</h2>
+
+         <div class="subscribe">
+            <form method="POST">
+               {% csrf_token %}
+               {{ question_form.as_p }}
+               <button type="submit">Отправить</button>
+            </form>
+         </div>
+
+         <div class="footer-box flex j-sb">
+            <div class="footer-box__item">
+               <div class="footer-logo">ICT</div>
+
+               <div id="map">
+                  <a href="https://yandex.ru/maps/?um=constructor%3A56c100194043b04bbd2491d7e544682edc88018d94714f17da1a751baca42997&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A56c100194043b04bbd2491d7e544682edc88018d94714f17da1a751baca42997&amp;width=288&amp;height=273&amp;lang=ru_RU" alt="" style="border: 0;" /></a>
+               </div>
+            </div>
+
+            <div class="footer-box__item">
+               <h3 class="footer-title">Меню</h3>
+
+               <p>
+                  <a class="text-decor-none" href="#">Главная</a>
+               </p>
+
+               <p>
+                  <a class="text-decor-none" href="#">Новости</a>
+               </p>
+
+               <p>
+                  <a class="text-decor-none" href="#">Персонал</a>
+               </p>
+
+               <p>
+                  <a class="text-decor-none" href="#">Специальности</a>
+               </p>
+
+               <p>
+                  <a class="text-decor-none" href="#">Жизнь в университете</a>
+               </p>
+            </div>
+
+            <div class="footer-box__item">
+               <h3 class="footer-title">Подробные</h3>
+
+               <p>
+                  <a class="text-decor-none" href="#">О нас</a>
+               </p>
+
+               <p>
+                  <a class="text-decor-none" href="#">Отзывы</a>
+               </p>
+
+               <p>
+                  <a class="text-decor-none" href="#">Актуальное</a>
+               </p>
+
+               <p>
+                  <a class="text-decor-none" href="#footer" uk-scroll>Задать вопрос</a>
+               </p>
+
+               <p>
+                  <a class="text-decor-none" href="#">Почему мы?</a>
+               </p>
+            </div>
+
+            <div class="footer-box__item">
+               <h3 class="footer-title">Контакты</h3>
+
+               <p class="contacts-info">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i> Blvd Libertad, 34 m05200 Arévalo
+               </p>
+               <p class="contacts-info">
+                  <i class="fa fa-phone" aria-hidden="true"></i> 0034 37483 2445 322
+               </p>
+               <p class="contacts-info">
+                  <i class="fa fa-envelope-o" aria-hidden="true"></i> hello@company.com
+               </p>
+            </div>
+         </div>
+
+         <div class="footer-info flex j-sb">
+            <p>Copyright ©2019</p>
+
+            <div class="socials">
+               <a class="text-decor-none" href="#">
+                  <i class="fa fa-pinterest" aria-hidden="true"></i>
+               </a>
+               <a class="text-decor-none" href="#">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+               </a>
+               <a class="text-decor-none" href="#">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+               </a>
+               <a class="text-decor-none" href="#">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+               </a>
+               <a class="text-decor-none" href="#">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+               </a>
+            </div>
+         </div>
+      </div>
+   </footer>
+   
+   <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+   <script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

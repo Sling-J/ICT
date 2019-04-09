@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block title %}ICT - Новости{% endblock %}
+
+{% block content %}
+   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/news-bg.jpg">      
+      <h1>Новости</h1>
+   </div>
+
+   <section id="news-section" class="news-section section">
+      <div class="wrapper">
+         <ul class="uk-breadcrumb breadcrumb">
+            <li><a href="{% url 'home_url' %}">Главная</a></li>
+            <li><span>Новости</span></li>
+         </ul>
+         <div class="news-wrap flex j-sb">
+            <div class="news-box">
+               {% if user.is_authenticated %}
+                  <a class="add-post text-decor-none transition" href="{% url 'news_add_url' %}">Добавить пост</a>
+               {% endif %}
+               
+               {% for post in posts %}
+                  <div class="news-box__item">
+                     {% if post.img %}
+                        <div class="news-box__img">
+                           <img src="{{ post.img.url }}" alt="news">
+                        </div>
+                     {% endif %}
+                     <div class="news-box__container flex">
+                        <div>
+                           <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
+
+                           {% if post.author == user %}
+                              <div class="uk-inline">
+                                 <button class="news-action-button uk-button-small uk-button-default" type="button">Еще</button>
+                                 <div class="news-action-dropdown" uk-dropdown="mode: click; pos: top-justify;">
+                                    <p>
+                                       <a href="{% url 'news_update_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-edit transition">Редактировать 
+                                          <i class="fa fa-pencil" aria-hidden="true"></i>
+                                       </a>
+                                    </p>
+                                    <p>
+                                       <a href="{% url 'news_delete_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-delete transition">Удалить пост
+                                          <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                       </a>
+                                    </p>
+                                 </div>
+                              </div>
+                           {% endif %}
+                        </div>
+
+                        <div class="news-box__title">
+                           <div class="flex j-sb">
+                              <a class="text-decor-none" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                              <img class="author-ava" src="{{ post.author.profile.img.url }}">
+                           </div>
+                           <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| {{ post.get_comment_count }} Комментариев</p>
+                        </div>
+                     </div>
+
+                     <p class="text-desc news-box__desc">
+                        {{ post.text|striptags|truncatechars:400 }}
+                     </p>
+
+                     <a class="text-decor-none news-box__more transition" href="{{ post.get_absolute_url }}">Читать далее</a>
+                  </div>
+               {% endfor %}
+            </div>
+
+            <div class="news-more">
+               <h3 class="text-title news-more__title">Последние новости</h3>
+
+               <div class="news-more-box">
+                  <div class="news-more__item">
+                     <div class="news-more__img">
+                        <img src="/media/img/latest_1.jpg" alt="news">
+                     </div>
+
+                     <a class="text-decor-none news-more__link" href="new-post.html">
+                        Why do you need a qualification?
+                     </a>
+                     
+                     <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+                  </div>
+
+                  <div class="news-more__item">
+                     <div class="news-more__img">
+                        <img src="/media/img/latest_2.jpg" alt="news">
+                     </div>
+
+                     <a class="text-decor-none news-more__link" href="new-post.html">
+                        Why do you need a qualification?
+                     </a>
+                     
+                     <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+                  </div>
+
+                  <div class="text-decor-none news-more__item">
+                     <div class="news-more__img">
+                        <img src="/media/img/latest_3.jpg" alt="news">
+                     </div>
+
+                     <a class="text-decor-none news-more__link" href="new-post.html">
+                        Why do you need a qualification?
+                     </a>
+                     
+                     <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+{% endblock content %}

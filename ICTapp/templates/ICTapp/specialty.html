@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}ICT - Специальности{% endblock %}
+
+{% block content %}
+   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/news-bg.jpg">      
+      <h1>Специальности</h1>
+   </div>
+
+   <section id="talents" class="talents section">
+      <div class="wrapper">         
+         <ul class="uk-breadcrumb breadcrumb">
+            <li><a href="{% url 'home_url' %}">Главная</a></li>
+            <li><span>Специальности</span></li>
+         </ul>
+
+         <div class="talents-box flex j-sb flex-wrap">
+            {% for speciality in specialty %}
+               <div class="talents-box__item">
+                  <div class="talents-box__img">
+                     <img src="{{ speciality.img.url }}" alt="talent">
+                  </div>
+   
+                  <div class="talents-box__text">
+                     <div class="text-title talents-box__title">{{ speciality.name }}</div>
+                  </div>
+   
+                  <a class="talents-box__link text-decor-none transition" href="{{ speciality.get_absolute_url }}">Подрбнее</a>
+               </div>
+            {% endfor %}
+         </div>
+      </div>
+   </section>
+{% endblock content %}

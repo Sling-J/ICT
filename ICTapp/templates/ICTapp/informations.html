@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}ICT - Жизнь в университете{% endblock %}
+
+{% block content %}
+   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/news-bg.jpg">      
+      <h1>Жизнь в университете</h1>
+   </div>
+
+   <section id="events" class="events section">
+      <div class="wrapper">
+         <ul class="uk-breadcrumb breadcrumb">
+            <li><a href="{% url 'home_url' %}">Главная</a></li>
+            <li><span>Жизнь в университете</span></li>
+         </ul>
+
+         <div class="events-box">
+            {% for information in informations %}
+               <div class="events-box__item flex j-sb flex-align-center">
+                  <p class="events-box__date">16 <span>Регион</span></p>
+   
+                  <div class="events-box__text">
+                     <h3 class="text-title events-box__title">
+                        <a class="transition" href="{{ information.get_absolute_url }}">{{ information.title }}</a>
+                     </h3>
+                     <p class="text-title events-box__location">{{ information.location }}</p>
+                     <p class="text-desc">{{ information.text }}</p>
+                  </div>
+   
+                  <div class="events-box__img">
+                     <img src="{{ information.img_main.url }}" alt="news">
+                  </div>
+               </div>
+            {% endfor %}
+         </div>
+      </div>
+   </section>
+{% endblock content %}
