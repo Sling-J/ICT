@@ -283,7 +283,12 @@ nav .menu {
 .talents-box__text {
    background: #F8F9FB;
    text-align: center;
-   padding: 40px 10px;
+   padding: 0 10px;
+   height: 130px;
+}
+
+.talents-box__title {
+   width: 100%;
 }
 
 .talents-box__avatar {
@@ -598,6 +603,10 @@ nav .menu {
    background: #d89902;
    -webkit-box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
            box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+}
+
+.news-slider-box .uk-overlay {
+   padding: 10px;
 }
 
 /* Footer */
