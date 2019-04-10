@@ -4,7 +4,7 @@
 {% block content %}
    <header>
       <div class="principal">
-         <h1>Website</h1>
+         <h1>Университет им.Шакарима</h1>
          <p>Информационно-коммуникационные технологии</p>
       </div>
 
@@ -201,8 +201,8 @@
                         <div class="testimonial-img">
                            <img src="/media/img/testimonials_user.jpg" alt="ИКТ-отзывы">
                         </div>
-                        <p class="testimonial-name">james cooper</p>
-                        <p class="testimonial-title">Graduate Student</p>
+                        <p class="testimonial-name">Имя Фамилия</p>
+                        <p class="testimonial-title">Выпускник</p>
                      </div>
                   </li>
                   
@@ -224,8 +224,8 @@
                         <div class="testimonial-img">
                            <img src="/media/img/testimonials_user.jpg" alt="ИКТ-отзывы">
                         </div>
-                        <p class="testimonial-name">james cooper</p>
-                        <p class="testimonial-title">Graduate Student</p>
+                        <p class="testimonial-name">Имя Фамилия</p>
+                        <p class="testimonial-title">Выпускник</p>
                      </div>
                   </li>
 
@@ -247,8 +247,8 @@
                         <div class="testimonial-img">
                            <img src="/media/img/testimonials_user.jpg" alt="ИКТ-отзывы">
                         </div>
-                        <p class="testimonial-name">james cooper</p>
-                        <p class="testimonial-title">Graduate Student</p>
+                        <p class="testimonial-name">Имя Фамилия</p>
+                        <p class="testimonial-title">Выпускник</p>
                      </div>
                   </li>
                </ul>
@@ -269,16 +269,20 @@
          <div class="news-slider-box uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true; autoplay: true; autoplay-interval: 4000">
             <ul class="uk-slider-items uk-grid">
                {% for post in posts %}
-                  <li class="uk-width-3-5">
+                  <li class="uk-width-2-5">
                      <div class="uk-panel">
                         {% if post.img %}
-                           <img src="{{ post.img.url }}" alt="ИКТ-новости">
+                           <div class="news-slider-img-container">
+                              <img src="{{ post.img.url }}" alt="ИКТ-новости">
+                           </div>
                         {% else %}
-                        <img src="/media/post.jpg" alt="ИКТ-новости">
+                           <div class="news-slider-img-container">
+                              <img src="/media/post.jpg" alt="ИКТ-новости">
+                           </div>
                         {% endif %}
                         <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
-                           <h3 class="uk-margin-remove">{{ post.title }}</h3>
-                           <p class="uk-margin-remove">{{ post.text|truncatechars:30 }}</p>
+                           <h3 class="uk-margin-remove">{{ post.title|safe }}</h3>
+                           <p class="uk-margin-remove">{{ post.text|safe|truncatechars:30 }}</p>
                            <a class="text-decor-none slider-btn transition" href="{{ post.get_absolute_url }}">Подробнее</a>
                         </div>
                      </div>

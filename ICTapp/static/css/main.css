@@ -142,7 +142,7 @@ header {
 }
 
 .principal h1 {
-   font-size: 85px;
+   font-size: 70px;
    color: #fff;
    margin-bottom: 20px;
 }
@@ -570,10 +570,13 @@ nav .menu {
 
 .events-box__img {
    width: 50%;
+   height: 180px;
+   overflow: hidden;
 }
 
 .events-box__img img {
    width: 100%;
+   min-height: 100%;
 }
 
 .information-box__container .news-box__date {
@@ -588,7 +591,15 @@ nav .menu {
 
 .news-slider-box img {
    width: 100%;
+   min-height: 100%;
 }
+
+
+.news-slider-img-container {
+   height: 500px;
+   overflow: hidden;
+}
+
 
 .slider-btn {
    background: #ffb606;
