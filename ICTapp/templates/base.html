@@ -11,6 +11,7 @@
    <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
    <link rel="shortcut icon" href="/media/3.ico" type="image/png">
    <script src="{% static 'js/uikit.min.js' %}"></script>
+   <script src="{% static 'js/uikit-icons.min.js' %}"></script>
    {% block links %}{% endblock %}
    <title>{% block title %}{% endblock %}</title>
 </head>
@@ -37,7 +38,7 @@
             <a href="{% url 'staff_url' %}" class="menu_link transition text-decor-none">Персонал</a>
          </li>
          <li class="menu_item">
-            <a href="#footer" class="menu_link transition text-decor-none" uk-scroll>Контакты</a>  
+            <a href="#footer" class="menu_link transition text-decor-none" uk-scroll>Контакты</a>
          </li>
       </ul>
       <div class="auth-box">
@@ -52,6 +53,40 @@
                <a href="{% url 'sign_in_url' %}" class="text-decor-none transition">Авторизоваться</a>
             </p>
          {% endif %}
+      </div>
+      <div class="responsive-menu-container">
+         <button class="responsive-menu" type="button" uk-toggle="target: #offcanvas-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+         </button>
+
+         <div id="offcanvas-nav" uk-offcanvas="overlay: true; flip: true">
+            <div class="uk-offcanvas-bar">
+               <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+               <ul class="uk-nav uk-nav-default responsive-menu-box">
+                  <li><a href="{% url 'home_url' %}">Главная</a></li>
+                  <li><a href="{% url 'news_url' %}">Новости</a></li>
+                  <li><a href="{% url 'specialty_url' %}">Специальности</a></li>
+                  <li><a href="{% url 'informations_url' %}">Жизнь в университете</a></li>
+                  <li><a href="{% url 'staff_url' %}">Персонал</a></li>
+                  <li><a href="#footer" uk-scroll>Контакты</a></li>
+               </ul>
+
+               <div class="socials flex j-sb flex-align-center">
+                  <p>ICT</p>
+                  <div>
+                     <a class="text-decor-none" href="https://www.instagram.com/semgu_fict/">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                     </a>
+                     <a class="text-decor-none" href="https://www.facebook.com/semeyuniver/">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
    </nav>
    {% block content %}
@@ -171,7 +206,7 @@
          </div>
       </div>
    </footer>
-   
+
    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
    <script src="{% static 'js/parallax.min.js' %}"></script>
    <script src="{% static 'js/custom.js' %}"></script>
