@@ -11,15 +11,15 @@
          <ul class="uk-breadcrumb breadcrumb">
             <li><a href="{% url 'home_url' %}">Главная</a></li>
             <li><a href="{% url 'news_url' %}">Новости</a></li>
-            <li><span>{{ post.title }}</span></li>
+            <li><span>Подробнее</span></li>
          </ul>
          <div class="news-wrap flex j-sb">
             <div class="news-box">
                {% if messages %}
                   {% for mess in messages %}
-                     <div>
+                     <p>
                         {{ mess }}
-                     </div>
+                     </p>
                   {% endfor %}
                {% endif %}
                <div class="news-box__item">
@@ -105,7 +105,7 @@
                      </div>
 
                      <div class="news-box__title">
-                        <div class="flex j-sb">
+                        <div class="flex j-sb flex-align-center">
                            <a class="text-decor-none">{{ post.title }}</a>
                            <img class="author-ava" src="{{ post.author.profile.img.url }}">
                         </div>
@@ -124,8 +124,8 @@
                               <img src="{{ comment.img.url }}" alt="">
                            </div>
 
-                           <div>
-                              <p class="news-comment-box__author">{{ comment.full_name }} | {{ comment.date|date:"M d, Y "}} | <span>Reply</span></p>
+                           <div class="news-comment-container">
+                              <p class="news-comment-box__author">{{ comment.full_name }} | {{ comment.date|date:"M d, Y "}} | <span class="news-comment-box__reply">Ответить</span></p>
 
                               <p class="text-desc news-comment-box__text">
                                  {{ comment.text }}
@@ -140,7 +140,7 @@
                         <form method="POST">
                            {% csrf_token %}
                            {{ comment_form.as_p }}
-                           <button type="submit">Добавить</button>
+                           <button class="transition" type="submit">Добавить</button>
                         </form>
                      </div>
                   </div>
@@ -153,9 +153,11 @@
    </section>
 
    <script>
+      const activeListItem = document.querySelectorAll('.responsive-menu-box li')[1];
       const input = document.querySelectorAll('.add-comment-form input')[1];
       const textarea = document.querySelectorAll('.add-comment-form textarea')[0];
 
+      activeListItem.classList.add('uk-active');
       input.placeholder = 'Имя и фамилия';
       textarea.placeholder = 'Комментаарий';
    </script>

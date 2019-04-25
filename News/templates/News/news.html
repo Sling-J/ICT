@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="news-box__title">
-                           <div class="flex j-sb">
+                           <div class="flex j-sb flex-align-center">
                               <a class="text-decor-none" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                               <img class="author-ava" src="{{ post.author.profile.img.url }}">
                            </div>
@@ -113,4 +113,9 @@
          </div>
       </div>
    </section>
+
+   <script>
+      const activeListItem = document.querySelectorAll('.responsive-menu-box li')[1];
+      activeListItem.classList.add('uk-active');
+   </script>
 {% endblock content %}

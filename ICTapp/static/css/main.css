@@ -16,11 +16,15 @@
    overflow-y: scroll !important;
 }
 
-.responsive-menu-container {
+.responsive-menu-container,
+.responsive-links,
+.responsive-footer-box__item,
+.responsive-menu-events-box__img {
    display: none;
 }
 
-#map {
+#map,
+#responsive {
    width: 100%;
 }
 
@@ -28,7 +32,8 @@
 .events.section,
 .specialty.section,
 .talents.section,
-.news-section.section {
+.news-section.section,
+.responsive-links.section {
    margin: 80px 0;
 }
 
@@ -141,7 +146,7 @@ header {
 .wrapper {
    max-width: 1170px;
    margin: 0 auto;
-   padding: 0 25px;
+   padding: 0 15px;
 }
 
 .principal {
@@ -179,7 +184,6 @@ nav {
 
 .logo {
    margin-left: 45px;
-   font-family: 'Courgette';
    font-weight: 700;
    line-height: 45px;
    text-align: center;
@@ -596,6 +600,10 @@ nav .menu {
    font-size: 35px;
 }
 
+.news-box__item .information-box__container {
+   margin: 0 0 30px
+}
+
 /* News-slider */
 
 .news-slider-box {
@@ -856,11 +864,12 @@ footer .section-title {
 
 .news-box__title a {
    color: #1a1a1a;
-   font-size: 36px;
+   font-size: 29px;
    text-decoration: none;
    font-weight: 600;
    margin-top: -10px;
    margin-bottom: 7px;
+   margin-right: 5px;
    display: block;
 }
 
@@ -982,12 +991,17 @@ footer .section-title {
    border-radius: 50%;
    overflow: hidden;
    width: 115px;
+   min-width: 115px;
    height: 115px;
 }
 
 .news-comment-box__ava img {
    width: 100%;
    min-height: 100%;
+}
+
+.news-comment-container {
+   width: 75%;
 }
 
 .news-comment-box__text {
@@ -1304,6 +1318,7 @@ footer .section-title {
    max-width: 750px;
    padding-top: 3.5%;
    margin-left: 6.5%;
+   margin-right: 20px;
 }
 
 .teachers-detail-info__name {
@@ -1367,47 +1382,89 @@ footer .section-title {
 
 
 @media (max-width: 1280px) {
+   /* -- nav -- */
    nav {
       left: 0;
       top: 0;
       width: 100%;
    }
-}
 
-@media (max-width: 1093px) {
-   nav .menu {
+   /* -- links -- */
+   .links_icon {
       display: none;
    }
 
-   .logo {
-      margin-right: 30px;
+   .links_item {
+      text-align: center;
+   }
+
+   /* -- news-slider -- */
+   .news-slider .uk-width-2-5 {
+      width: 60%;
+   }
+}
+
+@media (max-width: 1096px) {
+   .news-wrap,
+   .responsive-footer-box__item,
+   .responsive-auth-box-true a,
+   .responsive-menu-container,
+   .events-box__item,
+   .services-box,
+   .responsive-menu-events-box__img {
+      display: block;
+   }
+
+   .news-section .wrapper,
+   .events .wrapper,
+   .teachers .wrapper {
+      max-width: 790px;
+   }
+
+   nav .menu,
+   nav .auth-box,
+   .hidden-footer-box__item,
+   .hidden-events-box__img {
+      display: none;
+   }
+
+   .news-header h1 {
+      font-size: 65px;
+   }
+
+   /* -- nav -- */
+   nav {
+      padding: 15px;
+   }
+
+   nav .logo {
+      margin-left: 15px;
+   }
+
+   .responsive-auth-box {
+      color: #999;
+      margin-top: 40px;
+   }
+
+   .responsive-auth-box .responsive-auth-box-true a,
+   .responsive-auth-box .responsive-auth-box-false a {
+      color: #d8d8d8;
    }
 
    .responsive-menu-box {
-      margin-top: 70px !important;
-      margin-bottom: 30px !important;
+      margin-bottom: 40px !important;
    }
 
    .uk-offcanvas-bar .socials p {
+      color: #ffb606;
+      font-weight: 700;
       font-size: 30px;
       margin: 0;
    }
 
-   .uk-offcanvas-bar .socials a {
-      font-size: 19px;
-      color: #999;
-   }
-   
-   .responsive-menu-box .socials a:hover {
-      color: #666;
-   }
-
+   .uk-offcanvas-bar .socials a,
    .responsive-menu-box li {
       font-size: 19px;
-   }
-
-   .responsive-menu-container {
-      display: block;
    }
 
    .responsive-menu {
@@ -1425,7 +1482,7 @@ footer .section-title {
       width: 30px;
       height: 3px;
       background: #1a1a1a;
-      margin: 5px 0;
+      margin: 4px 0;
       -webkit-transition: all 0.2s;
       -moz-transition: all 0.2s;
       -ms-transition: all 0.2s;
@@ -1437,14 +1494,385 @@ footer .section-title {
       background: #ffb606;
    }
 
-   .responsive-menu span:first-child {
-      height: 4px;
-      position: absolute;
-      bottom: 7px;
+   /* -- title -- */
+   header .principal {
+      top: 45%;
    }
 
-   .responsive-menu span:last-child {
-      position: absolute;
-      top: 7px;
+   /* -- links box -- */
+   .links-box {
+      padding: 15px;
+   }
+
+   /* -- about -- */
+   .register-info,
+   .register-form {
+      display: block;
+      width: 100%;
+      padding: 60px 100px 130px;
+      height: auto;
+   }
+
+   .register-wrap {
+      max-width: 100%;
+   }
+
+   .register-wrap,
+   .register-desc {
+      line-height: 1.85;
+      margin: 0;
+   }
+
+   /* -- services --*/
+   .services-box__item {
+      width: 100%;
+      margin-bottom: 50px;
+   }
+
+   /* -- news -- */
+   .news-box,
+   .news-more {
+      width: 100%;
+   }
+
+   .news-more {
+      margin-top: 120px;
+   }
+
+   .news-box__title a {
+      font-size: 28px;
+   }
+
+   .news-box__more {
+      padding: 10px 40px;
+      font-size: 14px;
+   }
+
+   /* -- news-slider -- */
+   .news-slider .uk-width-2-5 {
+      width: 80%;
+   }
+
+   /* -- speciality -- */
+   .talents-box__item,
+   .teachers-box__item {
+      width: 48%;
+   }
+
+   /* -- student-life -- */
+   .events-box__date {
+      display: inline-block;
+      margin: 0 0 30px;
+      padding: 15px 35px;
+   }
+
+   .responsive-menu-events-box__img {
+      height: auto;
+      width: 100%;
+      margin-bottom: 30px;
+   }
+
+   /* -- staff -- */
+   .teachers-detail-info-box {
+      width: 74%;
+   }
+
+   .teachers-detail-ava-box {
+      width: 25%;
+   }
+
+   .teachers-detail-ava__img {
+      margin: 70px auto 0;
+      width: 170px;
+      height: 210px;
+   }
+
+   /* -- footer -- */
+   .subscribe input,
+   .subscribe textarea {
+      width: 85%;
+   }
+
+   .footer-box {
+      flex-wrap: wrap;
+   }
+
+   .footer-box__item {
+      width: 45%;
+   }
+}
+
+@media (max-width: 690px) {
+   .talents-box__item,
+   .responsive-links_icon img,
+   .profile-wrapper,
+   .subscribe input,
+   .subscribe textarea,
+   .footer-box__item {
+      width: 100%;
+   }
+
+   header .principal p,
+   .news-slider-container .uk-panel p,
+   .responsive-links_text p {
+      font-size: 15px;
+   }
+
+   /* -- header -- */
+   .news-header h1 {
+      font-size: 50px;
+   }
+
+   header .principal {
+      top: 50%;
+   }
+
+   header .principal h1 {
+      font-size: 60px;
+   }
+
+   /* -- link -- */
+   .links {
+      display: none;
+   }
+
+   .responsive-links {
+      display: block;
+   }
+
+   .responsive-links-box {
+      width: 100%;
+      padding: 30px;
+      margin-bottom: 20px;
+      background: #1a1a1a;
+      display: block;
+      color: #fff;
+   }
+
+   .responsive-links-box:hover {
+      color: #fff;
+      background: #ffb606;
+   }
+
+   .responsive-links_icon {
+      width: 14%;
+      margin-right: 30px;
+   }
+
+   /* -- register -- */
+   .register-info,
+   .register-form {
+      padding: 60px 60px 130px;
+   }
+
+   /* -- reviews -- */
+   .slider-review-box {
+      min-height: 445px !important;
+   }
+
+   .testimonials-text {
+      padding: 0;
+   }
+
+   /* -- news -- */
+   .news-box__title a {
+      font-size: 20px;
+   }
+
+   .news-box__date {
+      display: inline-block;
+      padding: 5px 20px;
+   }
+
+   .news-box__container {
+      display: block;
+   }
+
+   .news-box__title .author-ava {
+      width: 75px;
+      height: 75px;
+   }
+
+   .news-comment-box__item {
+      align-items: flex-start;
+   }
+
+   .news-comment-box__ava {
+      min-width: 80px;
+      width: 80px;
+      height: 80px;
+   }
+
+   .profile-wrapper {
+      padding: 0;
+   }
+
+   /* -- news slider -- */
+   .news-slider-container {
+      height: 360px;
+   }
+
+   .news-slider-container .uk-panel {
+      height: 100%;
+   }
+
+   .news-slider-container .uk-panel h3 {
+      font-size: 18px;
+   }
+
+   .slider-btn {
+      margin-top: 11px;
+      padding: 4px 39px;
+   }
+
+   /* -- student life -- */
+   .events .wrapper {
+      max-width: 560px;
+   }
+
+   /* -- speciality -- */
+   .talents-box__title {
+      font-size: 18px;
+   }
+
+   .talents-box__text {
+      height: 115px;
+   }
+
+   /* -- staff -- */
+   .teachers-box__img {
+      height: 420px;
+   }
+
+   .teachers-detail-ava__img {
+      width: 124px;
+      height: 145px;
+   }
+
+   .teachers-detail-info__name {
+      font-size: 40px;
+   }
+
+   .teachers-detail-info__job-title {
+      font-size: 18px;
+   }
+
+   .teachers-detail-info__links a {
+      width: 30px;
+      padding: 0;
+   }
+
+   .teachers-detail-info__personal-info p {
+      font-size: 13px;
+   }
+
+   /* -- footer -- */
+   .footer-box {
+      display: block;
+   }
+}
+
+@media (max-width: 500px) {
+   .news-box__title .author-ava,
+   .events-box__date {
+      display: none;
+   }
+
+   nav {
+      padding: 5px;
+   }
+
+   .logo a {
+      font-size: 33px;
+   }
+
+   /* -- header -- */
+   .news-header h1 {
+      font-size: 30px;
+   }
+
+   header .principal h1 {
+      font-size: 45px;
+   }
+
+   header .principal p {
+      font-size: 13px;
+   }
+
+   /* -- links -- */
+   .responsive-links_icon {
+      min-width: 70px;
+   }
+
+   /* -- register -- */
+   .register-info,
+   .register-form {
+      padding: 60px 15px 130px;
+   }
+
+   .register-desc {
+      text-align: justify;
+   }
+
+   /* -- reviews -- */
+   .slider-review-box {
+      min-height: 485px !important;
+   }
+
+   .testimonials-text {
+      font-size: 13px;
+   }
+
+   /* -- news -- */
+   .news-box__more {
+      padding: 10px 35px;
+      font-size: 13px;
+   }
+
+   .news-box__title {
+      margin-top: 15px;
+   }
+
+   .news-box__desc {
+      font-size: 13px;
+   }
+
+   .news-comment-container,
+   .teachers-box__item {
+      width: 100%;
+   }
+
+   .news-comment-box__ava {
+      margin-right: 10px;
+      min-width: 40px;
+      width: 40px;
+      height: 40px;
+   }
+
+   .news-comment-box__text {
+      margin: 0;
+   }
+
+   /* -- news slider -- */
+   .news-slider-container {
+      height: 250px;
+   }
+
+   .news-slider-container .uk-panel h3 {
+      font-size: 15px;
+   }
+
+   .news-slider-container .uk-panel p {
+      font-size: 13px;
+   }
+}
+
+@media (max-width: 365px) {
+   header .principal h1 {
+      font-size: 35px;
+   }
+
+   .responsive-links_icon {
+      min-width: 30%;
    }
 }

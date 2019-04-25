@@ -65,6 +65,19 @@
             <div class="uk-offcanvas-bar">
                <button class="uk-offcanvas-close" type="button" uk-close></button>
 
+               <div class="responsive-auth-box">
+                  {% if user.is_authenticated %}
+                     <p class="responsive-auth-box-true flex j-sb">
+                        <a href="{% url 'profile_url' %}" class="text-decor-none">Профиль</a>
+                        <a href="{% url 'sign_out_url' %}" class="text-decor-none">Выйти</a>
+                     </p>
+                  {% else %}
+                     <p class="responsive-auth-box-false">
+                        <a href="{% url 'sign_in_url' %}" class="text-decor-none">Авторизоваться</a>
+                     </p>
+                  {% endif %}
+               </div>
+
                <ul class="uk-nav uk-nav-default responsive-menu-box">
                   <li><a href="{% url 'home_url' %}">Главная</a></li>
                   <li><a href="{% url 'news_url' %}">Новости</a></li>
@@ -111,7 +124,7 @@
          </div>
 
          <div class="footer-box flex j-sb">
-            <div class="footer-box__item">
+            <div class="footer-box__item hidden-footer-box__item">
                <div class="footer-logo">ICT</div>
 
                <div id="map">
@@ -179,6 +192,14 @@
                <p class="contacts-info">
                   <i class="fa fa-envelope-o" aria-hidden="true"></i> semgu_fict@mail.ru
                </p>
+            </div>
+
+            <div class="footer-box__item responsive-footer-box__item">
+               <div class="footer-logo">ICT</div>
+
+               <div id="responsive-map">
+                  <a href="https://yandex.ru/maps/?um=constructor%3A56c100194043b04bbd2491d7e544682edc88018d94714f17da1a751baca42997&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A56c100194043b04bbd2491d7e544682edc88018d94714f17da1a751baca42997&amp;width=288&amp;height=150&amp;lang=ru_RU" alt="" style="border: 0;" /></a>
+               </div>
             </div>
          </div>
 

@@ -16,6 +16,10 @@
          <div class="events-box">
             {% for information in informations %}
                <div class="events-box__item flex j-sb flex-align-center">
+                  <div class="events-box__img responsive-menu-events-box__img">
+                     <img src="{{ information.img_main.url }}" alt="news">
+                  </div>
+
                   <p class="events-box__date">16 <span>Регион</span></p>
    
                   <div class="events-box__text">
@@ -26,7 +30,7 @@
                      <p class="text-desc">{{ information.text }}</p>
                   </div>
    
-                  <div class="events-box__img">
+                  <div class="events-box__img hidden-events-box__img">
                      <img src="{{ information.img_main.url }}" alt="news">
                   </div>
                </div>
