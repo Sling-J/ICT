@@ -13,7 +13,7 @@ function nextBackground() {
    current++;
    current = current % backgrounds.length;
    content.css('background-image', backgrounds[current]);
-};
+}
 
 setInterval(nextBackground, 6000);
 
@@ -26,4 +26,4 @@ inputArr[1].placeholder = 'Имя и фамилия';
 inputArr[2].placeholder = 'Почта';
 inputArr[3].placeholder = 'Телефон';
 
-subscribeTextarea.placeholder = 'Ваш вопрос'
+subscribeTextarea.placeholder = 'Ваш вопрос';

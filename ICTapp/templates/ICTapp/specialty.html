@@ -2,29 +2,29 @@
 {% block title %}ICT - Специальности{% endblock %}
 
 {% block content %}
-   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/books.jpg">      
+   <div class="app-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/books.jpg">
       <h1>Специальности</h1>
    </div>
 
-   <section id="talents" class="talents section">
+   <section id="speciality" class="speciality section">
       <div class="wrapper">         
          <ul class="uk-breadcrumb breadcrumb">
             <li><a href="{% url 'home_url' %}">Главная</a></li>
             <li><span>Специальности</span></li>
          </ul>
 
-         <div class="talents-box flex j-sb flex-wrap">
+         <div class="speciality-box flex j-sb flex-wrap">
             {% for speciality in specialty %}
-               <div class="talents-box__item">
-                  <div class="talents-box__img">
-                     <img src="{{ speciality.img.url }}" alt="talent">
+               <div class="speciality-box__item">
+                  <div class="speciality-box__img">
+                     <img src="{{ speciality.img.url }}" alt="ИКТ-специальности">
                   </div>
    
-                  <div class="talents-box__text flex flex-align-center">
-                     <div class="text-title talents-box__title">{{ speciality.name }}</div>
+                  <div class="speciality-box__text flex flex-align-center">
+                     <p class="speciality-box__title text-title">{{ speciality.name }}</p>
                   </div>
    
-                  <a class="talents-box__link text-decor-none transition" href="{{ speciality.get_absolute_url }}">Подробнее</a>
+                  <a class="speciality-box__link text-decor-none transition" href="{{ speciality.get_absolute_url }}">Подробнее</a>
                </div>
             {% endfor %}
          </div>

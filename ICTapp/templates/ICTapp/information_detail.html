@@ -2,11 +2,11 @@
 {% block title %}ICT - Жизнь в университете{% endblock %}
 
 {% block content %}
-   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/student-life.jpg">
+   <div class="app-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/student-life.jpg">
       <h1>Жизнь в университете</h1>
    </div>
 
-   <section id="news-section" class="news-section section">
+   <section id="information" class="information-section section">
       <div class="wrapper">
          <ul class="uk-breadcrumb breadcrumb">
             <li><a href="{% url 'home_url' %}">Главная</a></li>
@@ -14,11 +14,11 @@
             <li><span>Актовый зал</span></li>
          </ul>
 
-         <div class="news-wrap flex j-sb">
-            <div class="news-box">
-               <div class="news-box__item">
+         <div class="app-wrap flex j-sb">
+            <div class="app-box">
+               <div class="app-box__item">
                   {% if information.img_main %}
-                     <div class="news-box__img news-desc-margin-b">
+                     <div class="app-box__img app-desc-margin-b">
                         <div uk-lightbox>
                            <a href="{{ information.img_main.url }}" data-caption="">
                               <img src="{{ information.img_main.url }}" alt="ИКТ">
@@ -26,11 +26,11 @@
                         </div>
                      </div>
                   {% endif %}
-                     <div class="news-box__img-container flex j-sb flex-wrap" uk-lightbox="animation: slide">
+                     <div class="app-box__img-container flex j-sb flex-wrap" uk-lightbox="animation: slide">
                         {% if information.img_1 %}
-                           <div class="news-img-container__item">
+                           <div class="app-img-container__item">
                               <a class="uk-inline uk-dark" href="{{ information.img_1.url }}" data-caption="">
-                                 <img class="new-img-container__pic" src="{{ information.img_1.url }}" alt="ИКТ">
+                                 <img class="app-img-container__pic" src="{{ information.img_1.url }}" alt="ИКТ">
 
                                  <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
                                     <div class="uk-position-center">
@@ -41,7 +41,7 @@
                            </div>
                         {% endif %}
                         {% if information.img_2 %}
-                           <div class="news-img-container__item">
+                           <div class="app-img-container__item">
                               <a class="uk-inline uk-dark" href="{{ information.img_2.url }}" data-caption="">
                                  <img src="{{ information.img_2.url }}" alt="ИКТ">
                                  
@@ -54,7 +54,7 @@
                            </div>
                         {% endif %}
                         {% if information.img_3 %}
-                           <div class="news-img-container__item">
+                           <div class="app-img-container__item">
                               <a class="uk-inline uk-dark" href="{{ information.img_3.url }}" data-caption="">
                                  <img src="{{ information.img_3.url }}" alt="ИКТ">
                                  
@@ -67,16 +67,16 @@
                            </div>
                         {% endif %}
                      </div>
-                  <div class="news-box__container flex flex-align-center information-box__container">
-                     <p class="news-box__date">16 <span>Регион</span></p>
+                  <div class="app-box__container information-box__container flex flex-align-center">
+                     <p class="app-box__date app-box__responsive-date">16 <span>Регион</span></p>
    
-                     <div class="news-box__title">
+                     <div class="app-box__title">
                         <a>{{ information.title }}</a>
-                        <p class="news-box__author">{{ information.location }}</p>
+                        <p class="app-box__author">{{ information.location }}</p>
                      </div>
                   </div>
 
-                  <p class="text-desc news-box__desc news-desc-margin-b">{{ information.text|safe }}</p>
+                  <p class="app-box__desc text-desc app-desc-margin-b">{{ information.text|safe }}</p>
                </div>
             </div>
             

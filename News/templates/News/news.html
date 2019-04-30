@@ -2,7 +2,7 @@
 {% block title %}ICT - Новости{% endblock %}
 
 {% block content %}
-   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/post.jpg">      
+   <div class="app-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/post.jpg">
       <h1>Новости</h1>
    </div>
 
@@ -12,34 +12,37 @@
             <li><a href="{% url 'home_url' %}">Главная</a></li>
             <li><span>Новости</span></li>
          </ul>
-         <div class="news-wrap flex j-sb">
-            <div class="news-box">
+
+         <div class="app-wrap flex j-sb">
+            <div class="app-box">
                {% if user.is_authenticated %}
                   <a class="add-post text-decor-none transition" href="{% url 'news_add_url' %}">Добавить пост</a>
                {% endif %}
-               
+
                {% for post in posts %}
-                  <div class="news-box__item">
+                  <div class="app-box__item">
                      {% if post.img %}
-                        <div class="news-box__img">
+                        <div class="app-box__img">
                            <img src="{{ post.img.url }}" alt="news">
                         </div>
                      {% endif %}
-                     <div class="news-box__container flex">
+
+                     <div class="app-box__container flex">
                         <div>
-                           <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
+                           <p class="app-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
 
                            {% if post.author == user %}
                               <div class="uk-inline">
-                                 <button class="news-action-button uk-button-small uk-button-default" type="button">Еще</button>
-                                 <div class="news-action-dropdown" uk-dropdown="mode: click; pos: top-justify;">
+                                 <button class="app-action-button uk-button-small uk-button-default" type="button">Еще</button>
+
+                                 <div class="app-action-dropdown" uk-dropdown="mode: click; pos: top-justify;">
                                     <p>
-                                       <a href="{% url 'news_update_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-edit transition">Редактировать 
+                                       <a href="{% url 'news_update_url' post.id %}" class="app-action-button__link app-action-button__link-edit text-decor-none transition">Редактировать
                                           <i class="fa fa-pencil" aria-hidden="true"></i>
                                        </a>
                                     </p>
                                     <p>
-                                       <a href="{% url 'news_delete_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-delete transition">Удалить пост
+                                       <a href="{% url 'news_delete_url' post.id %}" class="app-action-button__link app-action-button__link-delete text-decor-none transition">Удалить пост
                                           <i class="fa fa-trash-o" aria-hidden="true"></i>
                                        </a>
                                     </p>
@@ -48,23 +51,22 @@
                            {% endif %}
                         </div>
 
-                        <div class="news-box__title">
+                        <div class="app-box__title">
                            <div class="flex j-sb flex-align-center">
                               <a class="text-decor-none" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                               <img class="author-ava" src="{{ post.author.profile.img.url }}">
                            </div>
-                           <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| {{ post.get_comment_count }} Комментариев</p>
+                           <p class="app-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| {{ post.get_comment_count }} Комментариев</p>
                         </div>
                      </div>
 
-                     <p class="text-desc news-box__desc">
-                        {{ post.text|striptags|truncatechars:400 }}
+                     <p class="text-desc app-box__desc">
+                        {{ post.text|striptags|truncatechars:250 }}
                      </p>
 
-                     <a class="text-decor-none news-box__more transition" href="{{ post.get_absolute_url }}">Читать далее</a>
+                     <a class="app-box__more text-decor-none transition" href="{{ post.get_absolute_url }}">Читать далее</a>
                   </div>
                {% endfor %}
-               
 
                {% if is_paginated %}
                   <ul class="uk-pagination" uk-margin>
@@ -72,7 +74,7 @@
                         <li><a href="{% url 'news_url' %}" uk-tooltip="title: Начало; delay: 300"><span uk-pagination-previous></span><span uk-pagination-previous></span></a></li>
                         <li><a href="?page={{ page_obj.previous_page_number }}" uk-tooltip="title: Предыдущая; delay: 300"><span uk-pagination-previous></span></a></li>
                      {% endif %}
-                     <!-- <li class="uk-disabled"><span>...</span></li> -->
+
                      {% for num in page_obj.paginator.page_range %}
                         {% if num ==  page_obj.number %}
                            <li class="uk-active"><span>{{ num }}</span></li>
@@ -80,33 +82,13 @@
                            <li><a href="?page={{ num }}">{{ num }}</a></li>
                         {% endif %}
                      {% endfor %}
-                     <!-- <li class="uk-disabled"><span>...</span></li> -->
+
                      {% if page_obj.has_next %}
                         <li><a href="?page={{ page_obj.next_page_number }}" uk-tooltip="title: Следующая; delay: 300"><span uk-pagination-next></span></a></li>
                         <li><a href="?page={{ page_obj.paginator.num_pages }}" uk-tooltip="title: Последняя; delay: 300"><span uk-pagination-next></span><span uk-pagination-next></span></a></li>
                      {% endif %}
                   </ul>
               {% endif %}
-
-               <!-- {% if is_paginated %}
-                  {% if page_obj.has_previous %}
-                     <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-warning">Предыдущая</a>
-                     <a href="{% url 'news_url' %}" class="btn btn-outline-warning">Начало</a>
-                  {% endif %}
-
-                  {% for num in page_obj.paginator.page_range %}
-                     {% if num ==  page_obj.number %}
-                        <button class="btn btn-warning">{{ num }}</button>
-                     {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                        <a href="?page={{ num }}" class="btn btn-outline-warning">{{ num }}</a>
-                     {% endif %}
-                  {% endfor %}
-
-                  {% if page_obj.has_next %}
-                     <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-warning">Последняя</a>
-                     <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-warning">Следующая</a>
-                  {% endif %}
-               {% endif %} -->
             </div>
 
             {% include 'includes/latest_news.html' %}

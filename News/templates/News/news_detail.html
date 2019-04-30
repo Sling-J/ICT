@@ -2,7 +2,7 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/post.jpg">      
+   <div class="app-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/post.jpg">
       <h1>Новости</h1>
    </div>
 
@@ -13,8 +13,9 @@
             <li><a href="{% url 'news_url' %}">Новости</a></li>
             <li><span>Подробнее</span></li>
          </ul>
-         <div class="news-wrap flex j-sb">
-            <div class="news-box">
+
+         <div class="app-wrap flex j-sb">
+            <div class="app-box">
                {% if messages %}
                   {% for mess in messages %}
                      <p>
@@ -22,17 +23,17 @@
                      </p>
                   {% endfor %}
                {% endif %}
-               <div class="news-box__item">
+               <div class="app-box__item">
                   {% if post.img %}
-                     <div class="news-box__img news-desc-margin-b">
+                     <div class="app-box__img app-desc-margin-b">
                         <img src="{{ post.img.url }}" alt="news">
                      </div>
                   {% endif %}
-                  <div class="news-box__img-container flex j-sb flex-wrap" uk-lightbox="animation: slide">
+                  <div class="app-box__img-container flex j-sb flex-wrap" uk-lightbox="animation: slide">
                      {% if post.img_1 %}
-                        <div class="news-img-container__item">
+                        <div class="app-img-container__item">
                            <a class="uk-inline uk-dark" href="{{ post.img_1.url }}" data-caption="">
-                              <img class="new-img-container__pic" src="{{ post.img_1.url }}" alt="ИКТ">
+                              <img class="app-img-container__pic" src="{{ post.img_1.url }}" alt="ИКТ">
 
                               <div class="teachers-overlay-link transition uk-overlay-primary uk-position-cover">
                                  <div class="uk-position-center">
@@ -43,7 +44,7 @@
                         </div>
                      {% endif %}
                      {% if post.img_2 %}
-                        <div class="news-img-container__item">
+                        <div class="app-img-container__item">
                            <a class="uk-inline uk-dark" href="{{ post.img_2.url }}" data-caption="">
                               <img src="{{ post.img_2.url }}" alt="ИКТ">
                               
@@ -56,7 +57,7 @@
                         </div>
                      {% endif %}
                      {% if post.img_3 %}
-                        <div class="news-img-container__item">
+                        <div class="app-img-container__item">
                            <a class="uk-inline uk-dark" href="{{ post.img_3.url }}" data-caption="">
                               <img src="{{ post.img_3.url }}" alt="ИКТ">
                               
@@ -69,7 +70,7 @@
                         </div>
                      {% endif %}
                      {% if post.img_4 %}
-                        <div class="news-img-container__item">
+                        <div class="app-img-container__item">
                            <a class="uk-inline uk-dark" href="{{ post.img_4.url }}" data-caption="">
                               <img src="{{ post.img_4.url }}" alt="ИКТ">
                               
@@ -82,20 +83,20 @@
                         </div>
                      {% endif %}
                      </div>
-                  <div class="news-box__container flex">
+                  <div class="app-box__container flex">
                      <div>
-                        <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
+                        <p class="app-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
                         {% if post.author == user %}
                            <div class="uk-inline">
-                              <button class="news-action-button uk-button-small uk-button-default" type="button">Еще</button>
-                              <div class="news-action-dropdown" uk-dropdown="mode: click; pos: top-justify;">
+                              <button class="app-action-button uk-button-small uk-button-default" type="button">Еще</button>
+                              <div class="app-action-dropdown" uk-dropdown="mode: click; pos: top-justify;">
                                  <p>
-                                    <a href="{% url 'news_update_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-edit transition">Редактировать 
+                                    <a href="{% url 'news_update_url' post.id %}" class="text-decor-none app-action-button__link app-action-button__link-edit transition">Редактировать
                                        <i class="fa fa-pencil" aria-hidden="true"></i>
                                     </a>
                                  </p>
                                  <p>
-                                    <a href="{% url 'news_delete_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-delete transition">Удалить пост
+                                    <a href="{% url 'news_delete_url' post.id %}" class="text-decor-none app-action-button__link app-action-button__link-delete transition">Удалить пост
                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
                                     </a>
                                  </p>
@@ -104,37 +105,37 @@
                         {% endif %}
                      </div>
 
-                     <div class="news-box__title">
+                     <div class="app-box__title">
                         <div class="flex j-sb flex-align-center">
                            <a class="text-decor-none">{{ post.title }}</a>
                            <img class="author-ava" src="{{ post.author.profile.img.url }}">
                         </div>
-                        <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| {{ post.get_comment_count }} Комментариев</p>
+                        <p class="app-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| {{ post.get_comment_count }} Комментариев</p>
                      </div>
                   </div>
 
-                  <p class="text-desc news-box__desc news-desc-margin-b">{{ post.text|safe }}</p>
+                  <p class="text-desc app-box__desc news-desc-margin-b">{{ post.text|safe }}</p>
 
-                  <h3 class="text-title news-detail__comment">Комментарий</h3>
+                  <h3 class="text-title app-detail__comment">Комментарий</h3>
 
-                  <div class="news-comment-box">
+                  <div class="app-comment-box">
                      {% for comment in comments %}
-                        <div class="news-comment-box__item flex flex-align-center">
-                           <div class="news-comment-box__ava">
+                        <div class="app-comment-box__item flex flex-align-center">
+                           <div class="app-comment-box__ava">
                               <img src="{{ comment.img.url }}" alt="">
                            </div>
 
-                           <div class="news-comment-container">
-                              <p class="news-comment-box__author">{{ comment.full_name }} | {{ comment.date|date:"M d, Y "}} | <span class="news-comment-box__reply">Ответить</span></p>
+                           <div class="app-comment-container">
+                              <p class="app-comment-box__author">{{ comment.full_name }} | {{ comment.date|date:"M d, Y "}} | <span class="app-comment-box__reply">Ответить</span></p>
 
-                              <p class="text-desc news-comment-box__text">
+                              <p class="app-comment-box__text text-desc">
                                  {{ comment.text }}
                               </p>
                            </div>
                         </div>
                      {% endfor %}
 
-                     <h3 class="text-title news-detail__comment">Добавить комментарий</h3>
+                     <h3 class="text-title app-detail__comment">Добавить комментарий</h3>
                      
                      <div class="add-comment-form transition">
                         <form method="POST">

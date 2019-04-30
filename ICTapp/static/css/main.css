@@ -16,25 +16,42 @@
    overflow-y: scroll !important;
 }
 
-.responsive-menu-container,
-.responsive-links,
+.responsive-menu-information-box__img,
+.teachers-detail-responsive-ava__img,
 .responsive-footer-box__item,
-.responsive-menu-events-box__img {
+.responsive-menu-container,
+.responsive-links {
    display: none;
 }
 
-#map,
-#responsive {
+#responsive,
+#map {
    width: 100%;
 }
 
-.teachers.section,
-.events.section,
-.specialty.section,
-.talents.section,
+.responsive-links.section,
 .news-section.section,
-.responsive-links.section {
+.information.section,
+.speciality.section,
+.specialty.section,
+.teachers.section {
    margin: 80px 0;
+}
+
+.subscribe input::-webkit-outer-spin-button,
+.subscribe input::-webkit-inner-spin-button,
+.app-box__container .app-action-dropdown p,
+.teachers-detail-info__personal-title,
+.profile-wrapper .add-post-form p,
+.teachers-detail-info__job-title,
+.speciality-box__title,
+.speciality-box__text,
+.teachers-box__name,
+.news-more__author,
+.auth-box p,
+.nav .menu,
+.profile p {
+   margin: 0;
 }
 
 /* ------------------------------ Partials ------------------------------ */
@@ -69,20 +86,20 @@
 
 .j-se {
    -webkit-box-pack: space-evenly;
-   -ms-flex-pack: space-evenly;
-   justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
 }
 
 .flex-align-center {
    -webkit-box-align: center;
-   -ms-flex-align: center;
-   align-items: center;
+      -ms-flex-align: center;
+         align-items: center;
 }
 
 .flex-align-bottom {
    -webkit-box-align: end;
-   -ms-flex-align: end;
-   align-items: flex-end;
+      -ms-flex-align: end;
+    align-items: flex-end;
 }
 
 .section {
@@ -93,15 +110,9 @@
    border: none !important;
 }
 
-.news-box__container .news-action-dropdown p,
-.auth-box p,
-.teachers-box__name {
-   margin: 0;
-}
-
 .transition {
    -webkit-transition: all 0.3s;
-   transition: all 0.3s;
+           transition: all 0.3s;
 }
 
 /* ------------------------------ Index ------------------------------ */
@@ -196,7 +207,6 @@ nav {
 }
 
 nav .menu {
-   margin: 0;
    padding: 0;
    list-style-type: none;
    text-transform: uppercase;
@@ -282,44 +292,34 @@ nav .menu {
 
 /* Courses */
 
-.talents-box__item {
+.speciality-box__item {
    width: 30%;
    margin-bottom: 50px;
 }
 
-.talents-box__img {
+.speciality-box__img {
    height: 263px;
    overflow: hidden;
 }
 
-.talents-box__img img {
+.speciality-box__img img {
    width: 100%;
    min-height: 100%;
 }
 
-.talents-box__text {
+.speciality-box__text {
    background: #F8F9FB;
    text-align: center;
    padding: 0 10px;
    height: 130px;
 }
 
-.talents-box__title {
+.speciality-box__title {
    width: 100%;
+   font-size: 18px;
 }
 
-.talents-box__avatar {
-   font-size: 0;
-   border-radius: 50%;
-   overflow: hidden;
-   width: 45px;
-}
-
-.talents-box__avatar img {
-   width: 100%;
-}
-
-.talents-box__link {
+.speciality-box__link {
    background: #ffb606;
    color: #fff;
    display: block;
@@ -327,13 +327,9 @@ nav .menu {
    padding: 10px 10px 8px;
 }
 
-.talents-box__link:hover {
+.speciality-box__link:hover {
    background: #d89902;
    color: #fff;
-}
-
-.talents-box__name span {
-   color: #a5a5a5;
 }
 
 /* Specialty detail */
@@ -479,28 +475,27 @@ nav .menu {
    margin: 15px 0;
 }
 
-/* Testimonials */
+/* About us */
 
-.testimonials {
+.about-us {
    padding: 110px 0 80px;
    background: url('/media/youtube-education.jpg');
    color: #fff;
    background-size: cover;
-   background-repeat: no-repeat;
    text-align: center;
 }
 
-.testimonials .section-title {
+.about-us .section-title {
    color: #fff;
 }
 
-.testimonials-quote {
+.about-us-quote {
    color: #ffb606;
    font-size: 2em;
    margin-bottom: 15px;
 }
 
-.testimonials-text {
+.about-us-text {
    line-height: 2.29;
    font-size: 14px;
    margin-bottom: 50px;
@@ -508,29 +503,29 @@ nav .menu {
    color: #fff;
 }
 
-.testimonial-user {
+.about-us-user {
    margin-bottom: 30px;
 }
 
-.testimonial-img {
+.about-us-img {
    overflow: hidden;
    width: 80px;
    margin: 0 auto 20px;
    border-radius: 50%;
 }
 
-.testimonial-img img {
+.about-us-img img {
    width: 100%;
 }
 
-.testimonial-name {
+.about-us-name {
    text-transform: uppercase;
    font-weight: 600;
    color: #ffb606;
    margin-bottom: 6px;
 }
 
-.testimonial-title {
+.about-us-title {
    font-size: 14px;
    font-weight: 600;
 }
@@ -547,11 +542,11 @@ nav .menu {
 
 /* Events */
 
-.events-box__item {
+.information-box__item {
    margin-bottom: 100px;
 }
 
-.events-box__date {
+.information-box__date {
    padding: 25px 35px;
    margin-right: 50px;
    font-size: 50px;
@@ -561,46 +556,46 @@ nav .menu {
    text-align: center;
 }
 
-.events-box__date span {
+.information-box__date span {
    display: block;
    font-size: 14px;
 }
 
-.events-box__text {
+.information-box__text {
    margin-right: 30px;
 }
 
-.events-box__title a {
+.information-box__title a {
    color: inherit;
    text-decoration: none;
 }
 
-.events-box__title a:hover {
+.information-box__title a:hover {
    color: #ffb606;
 }
 
-.events-box__location {
+.information-box__location {
    font-size: 15px;
    margin-top: 5px;
    margin-bottom: 19px;
 }
 
-.events-box__img {
+.information-box__img {
    width: 50%;
    height: 180px;
    overflow: hidden;
 }
 
-.events-box__img img {
+.information-box__img img {
    width: 100%;
    min-height: 100%;
 }
 
-.information-box__container .news-box__date {
+.information-box__container .app-box__date {
    font-size: 35px;
 }
 
-.news-box__item .information-box__container {
+.app-box__item .information-box__container {
    margin: 0 0 30px
 }
 
@@ -676,7 +671,6 @@ footer .section-title {
 .subscribe input::-webkit-outer-spin-button,
 .subscribe input::-webkit-inner-spin-button {
    -webkit-appearance: none;
-   margin: 0;
 }
 
 .subscribe textarea {
@@ -789,14 +783,14 @@ footer .section-title {
    box-shadow: 5px 6px 8px -6px rgba(0, 0, 0, 0.75);
 }
 
-.news-header {
+.app-header {
    background-repeat: no-repeat;
    background-size: cover;
    text-align: center;
    height: 400px;
 }
 
-.news-header h1 {
+.app-header h1 {
    background: #ffb606;
    font-size: 72px;
    font-weight: 400;
@@ -806,43 +800,43 @@ footer .section-title {
    margin-top: 220px;
 }
 
-.news-box {
+.app-box {
    width: 65.5%;
 }
 
-.news-box__item {
+.app-box__item {
    margin-bottom: 80px;
 }
 
-.news-comment-box__item:last-child,
-.news-box__item:last-child {
+.app-comment-box__item:last-child,
+.app-box__item:last-child {
    margin-bottom: 0;
 }
 
-.news-box__img img,
-.news-img-container__item img {
+.app-box__img img,
+.app-img-container__item img {
    width: 100%;
 }
 
-.news-img-container__item {
+.app-img-container__item {
    width: 48.5%;
    margin-bottom: 20px;
 }
 
-.news-img-container__item a,
-.news-img-container__item:hover a {
+.app-img-container__item a,
+.app-img-container__item:hover a {
    color: #fff;
 }
 
-.news-img-container__item:hover .teachers-overlay-link {
+.app-img-container__item:hover .teachers-overlay-link {
    opacity: 1;
 }
 
-.news-box__container {
+.app-box__container {
    margin: 35px 0 25px;
 }
 
-.news-box__date {
+.app-box__date {
    text-align: center;
    margin-right: 25px;
    background: #ffb606;
@@ -852,17 +846,17 @@ footer .section-title {
    font-weight: 600;
 }
 
-.news-box__date span {
+.app-box__date span {
    display: block;
    margin-top: -6px;
    font-size: 14px;
 }
 
-.news-box__title {
+.app-box__title {
    width: 100%;
 }
 
-.news-box__title a {
+.app-box__title a {
    color: #1a1a1a;
    font-size: 29px;
    text-decoration: none;
@@ -873,27 +867,27 @@ footer .section-title {
    display: block;
 }
 
-.news-box__title a:hover,
-.news-more__link:hover {
+.app-box__title a:hover,
+.app-more__link:hover {
    color: #a5a5a5;
 }
 
-.news-box__title img {
+.app-box__title img {
    display: block;
 }
 
-.news-box__author {
+.app-box__author {
    margin-top: 0;
    font-size: 12px;
    font-weight: 600;
 }
 
-.news-box__desc {
+.app-box__desc {
    color: inherit;
    font-size: 14px;
 }
 
-.news-box__more {
+.app-box__more {
    display: inline-block;
    padding: 15px 50px;
    background: #ffb606;
@@ -902,7 +896,7 @@ footer .section-title {
    font-weight: 700;
 }
 
-.news-box__more:hover {
+.app-box__more:hover {
    -webkit-box-shadow: 5px 6px 8px -6px rgba(0, 0, 0, 0.75);
    box-shadow: 5px 6px 8px -6px rgba(0, 0, 0, 0.75);
    color: #fff;
@@ -929,7 +923,7 @@ footer .section-title {
    min-height: 100%;
 }
 
-.news-more__link {
+.app-more__link {
    font-weight: 600;
    font-size: 18px;
    color: #1a1a1a;
@@ -939,7 +933,6 @@ footer .section-title {
 }
 
 .news-more__author {
-   margin: 0;
    color: #a5a5a5;
    font-size: 12px;
 }
@@ -969,7 +962,7 @@ footer .section-title {
    color: #ffb606;
 }
 
-.news-desc-margin-b {
+.app-desc-margin-b {
    margin-bottom: 40px;
 }
 
@@ -977,16 +970,16 @@ footer .section-title {
    margin-top: 40px;
 }
 
-.news-detail__comment {
+.app-detail__comment {
    font-size: 18px;
    margin: 70px 0 35px;
 }
 
-.news-comment-box__item {
+.app-comment-box__item {
    margin-bottom: 40px;
 }
 
-.news-comment-box__ava {
+.app-comment-box__ava {
    margin-right: 25px;
    border-radius: 50%;
    overflow: hidden;
@@ -995,26 +988,26 @@ footer .section-title {
    height: 115px;
 }
 
-.news-comment-box__ava img {
+.app-comment-box__ava img {
    width: 100%;
    min-height: 100%;
 }
 
-.news-comment-container {
+.app-comment-container {
    width: 75%;
 }
 
-.news-comment-box__text {
+.app-comment-box__text {
    font-weight: 400;
 }
 
-.news-comment-box__author {
+.app-comment-box__author {
    font-size: 14px;
    font-weight: 600;
    margin-bottom: 15px;
 }
 
-.news-comment-box__author span {
+.app-comment-box__reply {
    color: #ffb606;
 }
 
@@ -1023,20 +1016,11 @@ footer .section-title {
    display: none !important;
 }
 
-.profile-wrapper .add-post-form p {
-   margin: 0;
-}
-
 .add-post-form input[type="file"] {
    width: 100%;
    padding: 30px 30px;
    background: 0 0;
    border: 1px dashed #e5e5e5;
-}
-
-.add-post-form progress {
-   margin: 0;
-   margin-bottom: 20px;
 }
 
 .post-update-form input,
@@ -1094,10 +1078,6 @@ footer .section-title {
 .profile button:hover {
    -webkit-box-shadow: 7px 6px 8px -7px rgba(0, 0, 0, 0.75);
    box-shadow: 7px 6px 8px -7px rgba(0, 0, 0, 0.75);
-}
-
-.profile p {
-   margin: 0;
 }
 
 /*          PROFILE         */
@@ -1176,49 +1156,49 @@ footer .section-title {
 
 /* news */
 
-.news-box__container .news-action-button {
+.app-box__container .app-action-button {
    padding: 0 25.7px;
    cursor: pointer;
    outline: none;
 }
 
-.news-box__container .news-action-dropdown {
+.app-box__container .app-action-dropdown {
    text-align: center;
    padding: 0;
 }
 
-.news-action-button__link {
+.app-action-button__link {
    text-align: center;
    display: block;
    padding: 5px;
 }
 
-.news-action-button__link i {
+.app-action-button__link i {
    display: inline-block;
    margin-left: 10px;
 }
 
-.news-action-button__link-edit {
+.app-action-button__link-edit {
    background: #F8F4F4;
    color: #9E7575;
 }
 
-.news-action-button__link-edit:hover {
+.app-action-button__link-edit:hover {
    color: #9E7575;
    background: #e2dede;
 }
 
-.news-action-button__link-edit i,
+.app-action-button__link-edit i,
 .menu_item:first-child {
    margin-left: 0px;
 }
 
-.news-action-button__link-delete {
+.app-action-button__link-delete {
    background: #F0506E;
    color: #fff;
 }
 
-.news-action-button__link-delete:hover {
+.app-action-button__link-delete:hover {
    color: #fff;
    background: #ce3754;
 }
@@ -1336,7 +1316,6 @@ footer .section-title {
 }
 
 .teachers-detail-info__job-title {
-   margin: 0;
    font-size: 21px;
    font-weight: 300;
 }
@@ -1370,7 +1349,6 @@ footer .section-title {
 
 .teachers-detail-info__personal-title {
    font-weight: 600;
-   margin: 0;
 }
 
 .teachers-detail-info__personal-desc {
@@ -1405,33 +1383,33 @@ footer .section-title {
 }
 
 @media (max-width: 1096px) {
-   .news-wrap,
+   .app-wrap,
    .responsive-footer-box__item,
    .responsive-auth-box-true a,
    .responsive-menu-container,
-   .events-box__item,
+   .information-box__item,
    .services-box,
-   .responsive-menu-events-box__img {
+   .responsive-menu-information-box__img {
       display: block;
    }
 
    .news-section .wrapper,
-   .events .wrapper,
-   .teachers .wrapper {
+   .information .wrapper,
+   .teachers .wrapper,
+   .information-section .wrapper {
       max-width: 790px;
    }
 
    nav .menu,
    nav .auth-box,
    .hidden-footer-box__item,
-   .hidden-events-box__img {
+   .hidden-information-box__img {
       display: none;
    }
 
-   .news-header h1 {
+   .app-header h1 {
       font-size: 65px;
    }
-
    /* -- nav -- */
    nav {
       padding: 15px;
@@ -1530,7 +1508,7 @@ footer .section-title {
    }
 
    /* -- news -- */
-   .news-box,
+   .app-box,
    .news-more {
       width: 100%;
    }
@@ -1539,11 +1517,11 @@ footer .section-title {
       margin-top: 120px;
    }
 
-   .news-box__title a {
+   .app-box__title a {
       font-size: 28px;
    }
 
-   .news-box__more {
+   .app-box__more {
       padding: 10px 40px;
       font-size: 14px;
    }
@@ -1554,19 +1532,19 @@ footer .section-title {
    }
 
    /* -- speciality -- */
-   .talents-box__item,
+   .speciality-box__item,
    .teachers-box__item {
       width: 48%;
    }
 
    /* -- student-life -- */
-   .events-box__date {
+   .information-box__date {
       display: inline-block;
       margin: 0 0 30px;
       padding: 15px 35px;
    }
 
-   .responsive-menu-events-box__img {
+   .responsive-menu-information-box__img {
       height: auto;
       width: 100%;
       margin-bottom: 30px;
@@ -1603,7 +1581,7 @@ footer .section-title {
 }
 
 @media (max-width: 690px) {
-   .talents-box__item,
+   .speciality-box__item,
    .responsive-links_icon img,
    .profile-wrapper,
    .subscribe input,
@@ -1619,7 +1597,7 @@ footer .section-title {
    }
 
    /* -- header -- */
-   .news-header h1 {
+   .app-header h1 {
       font-size: 50px;
    }
 
@@ -1670,34 +1648,34 @@ footer .section-title {
       min-height: 445px !important;
    }
 
-   .testimonials-text {
+   .about-us-text {
       padding: 0;
    }
 
    /* -- news -- */
-   .news-box__title a {
+   .app-box__title a {
       font-size: 20px;
    }
 
-   .news-box__date {
+   .app-box__date {
       display: inline-block;
       padding: 5px 20px;
    }
 
-   .news-box__container {
+   .app-box__container {
       display: block;
    }
 
-   .news-box__title .author-ava {
+   .app-box__title .author-ava {
       width: 75px;
       height: 75px;
    }
 
-   .news-comment-box__item {
+   .app-comment-box__item {
       align-items: flex-start;
    }
 
-   .news-comment-box__ava {
+   .app-comment-box__ava {
       min-width: 80px;
       width: 80px;
       height: 80px;
@@ -1726,16 +1704,12 @@ footer .section-title {
    }
 
    /* -- student life -- */
-   .events .wrapper {
+   .information .wrapper {
       max-width: 560px;
    }
 
    /* -- speciality -- */
-   .talents-box__title {
-      font-size: 18px;
-   }
-
-   .talents-box__text {
+   .speciality-box__text {
       height: 115px;
    }
 
@@ -1772,9 +1746,38 @@ footer .section-title {
    }
 }
 
+@media (max-width: 573px) {
+   .teachers-detail-responsive-ava__img {
+      display: block;
+   }
+
+   .teachers-detail-ava-box {
+      display: none;
+   }
+
+   .teachers-detail-responsive-container {
+      margin-bottom: 30px;
+   }
+
+   .teachers-detail-info-box {
+      width: 100%;
+   }
+
+   .teachers-detail-responsive-ava__img {
+      width: 30%;
+      height: 170px;
+      overflow: hidden;
+   }
+
+   .teachers-detail-responsive-ava__img img {
+      width: 100%;
+   }
+}
+
 @media (max-width: 500px) {
-   .news-box__title .author-ava,
-   .events-box__date {
+   .app-box__title .author-ava,
+   .app-box__responsive-date,
+   .information-box__date {
       display: none;
    }
 
@@ -1787,7 +1790,7 @@ footer .section-title {
    }
 
    /* -- header -- */
-   .news-header h1 {
+   .app-header h1 {
       font-size: 30px;
    }
 
@@ -1819,37 +1822,37 @@ footer .section-title {
       min-height: 485px !important;
    }
 
-   .testimonials-text {
+   .about-us-text {
       font-size: 13px;
    }
 
    /* -- news -- */
-   .news-box__more {
+   .app-box__more {
       padding: 10px 35px;
       font-size: 13px;
    }
 
-   .news-box__title {
+   .app-box__title {
       margin-top: 15px;
    }
 
-   .news-box__desc {
+   .app-box__desc {
       font-size: 13px;
    }
 
-   .news-comment-container,
+   .app-comment-container,
    .teachers-box__item {
       width: 100%;
    }
 
-   .news-comment-box__ava {
+   .app-comment-box__ava {
       margin-right: 10px;
       min-width: 40px;
       width: 40px;
       height: 40px;
    }
 
-   .news-comment-box__text {
+   .app-comment-box__text {
       margin: 0;
    }
 
@@ -1865,14 +1868,39 @@ footer .section-title {
    .news-slider-container .uk-panel p {
       font-size: 13px;
    }
+
+   /* -- staff detail -- */
+   .teachers-detail-info__name,
+   .teachers-detail-info__job {
+      text-align: center;
+   }
+
+   .teachers-detail-info__job-title {
+      margin-bottom: 10px;
+   }
+
+   .teachers-detail-responsive-container,
+   .teachers-detail-info__job {
+      display: block;
+   }
+
+   .teachers-detail-responsive-ava__img {
+      width: 70%;
+      margin: 0 auto;
+      height: auto;
+   }
 }
 
-@media (max-width: 365px) {
+@media (max-width: 376px) {
    header .principal h1 {
       font-size: 35px;
    }
 
    .responsive-links_icon {
-      min-width: 30%;
+      min-width: 22%;
+   }
+
+   .teachers-detail-responsive-ava__img {
+      width: 100%;
    }
 }

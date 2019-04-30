@@ -92,3 +92,39 @@ nav {
 footer {
 	display: none;
 }
+
+@media (max-width: 1096px) {
+	.login-form-box {
+      padding-top: 150px;
+   }
+}
+
+@media (max-width: 599px) {
+	.login-form {
+		max-width: 400px;
+		padding-top: 55px;
+	}
+
+	.login-form h2 {
+		font-size: 1.5em;
+	}
+
+	.login-form input {
+		height: 53px;
+	}
+
+	.login-form button {
+		height: 41px;
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 400px) {
+	.login-form-box {
+      padding-top: 100px;
+   }
+
+	.login-form {
+		padding: 40px 20px;
+	}
+}
