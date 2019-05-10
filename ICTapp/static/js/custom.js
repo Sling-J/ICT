@@ -1,12 +1,13 @@
 // Кэш
-function preloadImages() {
-   const array = [
-      '/media/img/1.jpg',
-      '/media/img/2.jpg',
-      '/media/img/3.jpg',
-      '/media/img/4.jpg',
-      '/media/img/5.jpg'
-   ];
+const array = [
+   '/media/img/1.jpg',
+   '/media/img/2.jpg',
+   '/media/img/3.jpg',
+   '/media/img/4.jpg',
+   '/media/img/5.jpg'
+];
+
+function preloadImages(array) {
 
    if (!preloadImages.list) preloadImages.list = [];
 
@@ -38,7 +39,7 @@ function preloadImages() {
    content.style.backgroundImage = backgrounds[current];
 }
 
-window.addEventListener('load', preloadImages);
+preloadImages(array)
 
 const inputArr = document.querySelectorAll('.subscribe input');
 const subscribeTextarea = document.querySelectorAll('.subscribe textarea')[0];

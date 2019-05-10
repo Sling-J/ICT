@@ -31,7 +31,7 @@ class Comment(models.Model):
    img = models.ImageField(default='default.jpg', upload_to='user_images')
    text = models.TextField()
    date = models.DateTimeField(default=timezone.now)
-   approved = models.BooleanField(default=False)
+   approved = models.BooleanField(default=True)
 
    def __str__(self):
       return 'Комментарий для поста "{}". {}'.format(self.post, self.text)
