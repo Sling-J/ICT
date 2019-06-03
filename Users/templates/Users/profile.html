@@ -5,38 +5,103 @@
    <div class="app-header" style="background: url('/media/img/news_background.jpg');">
       <h1>Profile</h1>
    </div>
-   <div class="wrapper">
-      <div class="profile-wrapper">
-         <div class="profile">
-            {% if messages %}
-               {% for mess in messages %}
-                  <div>
-                     {{ mess }}
-                  </div>
-               {% endfor %}
-            {% endif %}
-            <h2>Личный кабинет</h2>
-            <div class="user-area flex">
-               <div class="user-img">
-                     <img src="{{ user.profile.img.url }}" alt="" style="width: 65px;height:65px;border-radius: 50%;">
-               </div>
-               <div class="user-info">
-                  <p><strong> {{ user.first_name }} {{ user.last_name }}</strong></p>
-                  <p><strong> @{{ user.username }}</strong></p>
-                  <p><strong> {{ user.email }}</strong></p>
-               </div>
-            </div>
-         </div>
-         <hr>
-         <div style="padding-top: 50px;" class="profile">
-            <h2>Изменение данных</h2>
-            <form class="edit-profile-form" method="POST" enctype="multipart/form-data">
-               {% csrf_token %}
-               {{ update_user.as_p }}
-               {{ img_profile.as_p }}
-               <button class="transition" type="submit">Изменить</button>
-            </form>
+
+   <section id="teachers-detail" class="teachers-detail flex">
+      <div class="teachers-detail-ava-box">
+         <div class="teachers-detail-ava__img">
+            <img src="{{ user.profile.img.url }}" alt="ИКТ-профиль">
          </div>
       </div>
-   </div>
+      <div class="teachers-detail-info-box">
+         <div class="teachers-detail-info-container">
+            <ul class="uk-breadcrumb breadcrumb">
+               <li><a href="{% url 'home_url' %}">Главная</a></li>
+               <li><span>Профиль</span></li>
+            </ul>
+
+            <div>
+               {% if messages %}
+                  {% for mess in messages %}
+                     <div>{{ mess }}</div>
+                  {% endfor %}
+               {% endif %}
+            </div>
+
+            <div class="teachers-detail-responsive-container flex j-sb">
+               <div>
+                  <p class="teachers-detail-info__name">
+                     {{ user.first_name }} <span>{{ user.last_name }}</span>
+                  </p>
+                  <p class="profile-username">@{{ user.username }}</p>
+               </div>
+               <div class="teachers-detail-responsive-ava__img">
+                  <img src="{{ user.profile.img.url }}" alt="ИКТ-учителя">
+               </div>
+            </div>
+
+            <div class="teachers-detail-info__job flex j-sb">
+               <div>
+                  <p class="teachers-detail-info__job-title">{{ user.profile.position }}</p>
+                  <p class="profile-mail">Почта - <span class="text-title">{{ user.email }}</span></p>
+               </div>
+
+               <div class="teachers-detail-info__links">
+                  <a class="transition" href="#">
+                     <i class="fa fa-pinterest" aria-hidden="true"></i>
+                  </a>
+                  <a class="transition" href="#">
+                     <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a class="transition" href="#">
+                     <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a class="transition" href="#">
+                     <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a class="transition" href="#">
+                     <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+               </div>
+            </div>
+
+            <p class="text-desc">
+               {{ user.profile.information }}
+            </p>
+
+            
+
+            <div class="teachers-detail-info__personal-info flex j-sb">
+               <div>
+                  <p class="teachers-detail-info__personal-title">Location</p>
+                  <p class="teachers-detail-info__personal-desc">Portland, OR</p>
+               </div>
+
+               <div>
+                  <p class="teachers-detail-info__personal-title">Location</p>
+                  <p class="teachers-detail-info__personal-desc">Portland, OR</p>
+               </div>
+
+               <div>
+                  <p class="teachers-detail-info__personal-title">Location</p>
+                  <p class="teachers-detail-info__personal-desc">Portland, OR</p>
+               </div>
+
+               <div>
+                  <p class="teachers-detail-info__personal-title">Location</p>
+                  <p class="teachers-detail-info__personal-desc">Portland, OR</p>
+               </div>
+            </div>
+
+            <div class="edit-profile-box profile">
+               <h3>Редактирование профиля</h3>
+               <form class="edit-profile-form" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  {{ update_user.as_p }}
+                  {{ img_profile.as_p }}
+                  <button class="transition" type="submit">Изменить</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </section>
 {% endblock content %}

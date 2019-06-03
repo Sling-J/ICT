@@ -44,6 +44,7 @@
 .teachers-detail-info__personal-title,
 .profile-wrapper .add-post-form p,
 .teachers-detail-info__job-title,
+.teachers-detail-info__job p,
 .app-comment-box__text,
 .speciality-box__title,
 .speciality-box__text,
@@ -116,16 +117,6 @@
            transition: all 0.3s;
 }
 
-/* ------------------------------ Index ------------------------------ */
-
-header {
-   height: 100vh;
-   background-size: cover;
-   -webkit-transition: all 1s;
-   transition: all 1s;
-   color: #fff;
-}
-
 .section-title {
    color: #1a1a1a;
    font-size: 33px;
@@ -159,6 +150,16 @@ header {
    max-width: 1170px;
    margin: 0 auto;
    padding: 0 15px;
+}
+
+/* ------------------------------ Index ------------------------------ */
+
+header {
+   height: 100vh;
+   background-size: cover;
+   -webkit-transition: all 1s;
+   transition: all 1s;
+   color: #fff;
 }
 
 .principal {
@@ -1054,6 +1055,25 @@ footer .section-title {
    border: 1px dashed #e5e5e5;
 }
 
+.edit-profile-box h3 {
+   margin: 15px 0;
+}
+
+.edit-profile-form label {
+   padding: 12px 0 0;
+   display: block;
+}
+
+.edit-profile-form span {
+   font-size: 13px;
+   display: block;
+   margin-top: 10px;
+}
+
+.edit-profile-form input[type="file"] {
+   margin-top: 12px;
+}
+
 .post-update-form input,
 .post-update-form textarea,
 .add-post-form input[type="text"],
@@ -1095,7 +1115,7 @@ footer .section-title {
 
 .add-comment-form button,
 .profile button {
-   margin-bottom: 0;
+   margin-bottom: 40px;
    background: #ffb606;
    color: #fff;
    outline: none;
@@ -1183,6 +1203,10 @@ footer .section-title {
    color: #fff;
    -webkit-box-shadow: 7px 6px 8px -4px rgba(0, 0, 0, 0.75);
    box-shadow: 7px 6px 8px -4px rgba(0, 0, 0, 0.75);
+}
+
+.teachers-detail-info__job .text-title {
+   font-weight: 400;
 }
 
 /* news */
@@ -1301,15 +1325,12 @@ footer .section-title {
 .teachers-detail-ava-box {
    background: #F8F9FB;
    width: 37%;
-   height: 750px;
-   display: inline-block;
    vertical-align: top;
 }
 
 .teachers-detail-info-box {
    width: 63%;
    font-size: 16px;
-   display: inline-block;
 }
 
 .teachers-detail-ava__img {
@@ -1795,6 +1816,14 @@ footer .section-title {
    .app-comment-container {
       width: 77%;
    }
+   
+   .teachers-detail-info__name {
+      margin-bottom: 15px;
+   }
+
+   .profile-username {
+      margin: 0;
+   }
 
    .teachers-detail-responsive-ava__img {
       width: 30%;
@@ -1908,8 +1937,17 @@ footer .section-title {
       text-align: center;
    }
 
-   .teachers-detail-info__job-title {
-      margin-bottom: 10px;
+   .profile-mail {
+      margin-bottom: 10px !important;
+   }
+
+   .profile-username {
+      text-align: center;
+      margin-bottom: 30px;
+   }
+
+   .teachers-detail-info-container .text-desc {
+      text-align: justify;
    }
 
    .teachers-detail-responsive-container,
