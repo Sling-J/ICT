@@ -44,6 +44,7 @@
 .teachers-detail-info__personal-title,
 .profile-wrapper .add-post-form p,
 .teachers-detail-info__job-title,
+.app-comment-box__text,
 .speciality-box__title,
 .speciality-box__text,
 .teachers-box__name,
@@ -842,7 +843,7 @@ footer .section-title {
    background: #ffb606;
    color: #fff;
    font-size: 24px;
-   padding: 15px 26px;
+   padding: 15px 34px;
    font-weight: 600;
 }
 
@@ -850,6 +851,10 @@ footer .section-title {
    display: block;
    margin-top: -6px;
    font-size: 14px;
+}
+
+.app-box__date span:first-child {
+   margin-bottom: 4px;
 }
 
 .app-box__title {
@@ -980,12 +985,11 @@ footer .section-title {
 }
 
 .app-comment-box__ava {
-   margin-right: 25px;
+   margin-right: 15px;
    border-radius: 50%;
    overflow: hidden;
-   width: 115px;
-   min-width: 115px;
-   height: 115px;
+   width: 60px;
+   height: 60px;
 }
 
 .app-comment-box__ava img {
@@ -994,17 +998,44 @@ footer .section-title {
 }
 
 .app-comment-container {
-   width: 75%;
+   width: 87%;
+}
+
+.app-comment-container-reply__item:first-child {
+   margin-top: 30px;
+}
+
+.app-comment-container-reply__show {
+   background: none;
+   outline: none;
+   border: none;
+   margin-top: 10px;
+   font-weight: 600;
+   cursor: pointer;
+}
+
+.app-comment-container-reply__item {
+   margin-top: 17px;
+}
+
+.app-comment-container-reply__comment {
+   width: 89%;
+}
+
+.app-comment-container-reply .app-comment-box__ava {
+   width: 35px;
+   height: 35px;
 }
 
 .app-comment-box__text {
    font-weight: 400;
+   line-height: 1.8;
 }
 
 .app-comment-box__author {
    font-size: 14px;
    font-weight: 600;
-   margin-bottom: 15px;
+   margin-bottom: 7px;
 }
 
 .app-comment-box__reply {
@@ -1675,10 +1706,8 @@ footer .section-title {
       align-items: flex-start;
    }
 
-   .app-comment-box__ava {
-      min-width: 80px;
-      width: 80px;
-      height: 80px;
+   .app-comment-container {
+      width: 80%;
    }
 
    .profile-wrapper {
@@ -1761,6 +1790,10 @@ footer .section-title {
 
    .teachers-detail-info-box {
       width: 100%;
+   }
+
+   .app-comment-container {
+      width: 77%;
    }
 
    .teachers-detail-responsive-ava__img {
@@ -1852,8 +1885,8 @@ footer .section-title {
       height: 40px;
    }
 
-   .app-comment-box__text {
-      margin: 0;
+   .app-comment-container-reply .app-comment-box__ava {
+      height: 40px;
    }
 
    /* -- news slider -- */

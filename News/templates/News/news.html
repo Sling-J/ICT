@@ -29,7 +29,7 @@
 
                      <div class="app-box__container flex">
                         <div>
-                           <p class="app-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
+                           <p class="app-box__date">{{ post.date|date:"d"}} <span>{{ post.date|date:"M"}}</span><span>{{ post.date|date:"Y"}}</span></p>
 
                            {% if post.author == user %}
                               <div class="uk-inline">

@@ -18,9 +18,7 @@
             <div class="app-box">
                {% if messages %}
                   {% for mess in messages %}
-                     <p>
-                        {{ mess }}
-                     </p>
+                     <p>{{ mess }}</p>
                   {% endfor %}
                {% endif %}
                <div class="app-box__item">
@@ -85,7 +83,7 @@
                      </div>
                   <div class="app-box__container flex">
                      <div>
-                        <p class="app-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
+                        <p class="app-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span><span>{{ post.date|date:"Y"}}</span></p>
                         {% if post.author == user %}
                            <div class="uk-inline">
                               <button class="app-action-button uk-button-small uk-button-default" type="button">Еще</button>
@@ -120,17 +118,50 @@
 
                   <div class="app-comment-box">
                      {% for comment in comments %}
-                        <div class="app-comment-box__item flex flex-align-center">
+                        <div class="app-comment-box__item flex">
                            <div class="app-comment-box__ava">
                               <img src="{{ comment.img.url }}" alt="">
                            </div>
 
                            <div class="app-comment-container">
-                              <p class="app-comment-box__author">{{ comment.full_name }} | {{ comment.date|date:"M d, Y "}} | <span class="app-comment-box__reply">Ответить</span></p>
+                              <div class="app-comment-container-main">
+                                 <p class="app-comment-box__author">{{ comment.full_name }} | {{ comment.date|date:"d M Y H:i "}} | <span class="app-comment-box__reply">Ответить</span></p>
 
-                              <p class="app-comment-box__text text-desc">
-                                 {{ comment.text }}
-                              </p>
+                                 <p class="app-comment-box__text text-desc">
+                                    {{ comment.text }}
+                                 </p>
+                              </div>
+                              <button class="app-comment-container-reply__show">
+                                 Показать 2 ответа 
+                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                 <!-- <i class="fa fa-chevron-up" aria-hidden="true"></i> -->
+                              </button>
+                              <div class="app-comment-container-reply">
+                                 <div class="app-comment-container-reply__item flex">
+                                    <div class="app-comment-box__ava">
+                                       <img src="{{ comment.img.url }}" alt="">
+                                    </div>
+                                    <div class="app-comment-container-reply__comment">
+                                       <p class="app-comment-box__author">{{ comment.full_name }} | {{ comment.date|date:"d M Y H:i "}} | <span class="app-comment-box__reply">Ответить</span></p>
+
+                                       <p class="app-comment-box__text text-desc">
+                                          {{ comment.text }}
+                                       </p>
+                                    </div>
+                                 </div>
+                                 <div class="app-comment-container-reply__item flex">
+                                    <div class="app-comment-box__ava">
+                                       <img src="{{ comment.img.url }}" alt="">
+                                    </div>
+                                    <div class="app-comment-container-reply__comment">
+                                       <p class="app-comment-box__author">{{ comment.full_name }} | {{ comment.date|date:"d M Y H:i "}} | <span class="app-comment-box__reply">Ответить</span></p>
+
+                                       <p class="app-comment-box__text text-desc">
+                                          {{ comment.text }}
+                                       </p>
+                                    </div>
+                                 </div>
+                              </div>
                            </div>
                         </div>
                      {% endfor %}
