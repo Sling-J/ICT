@@ -4,6 +4,7 @@ from django.views.generic import View
 from .models import Specialty
 from django.contrib.auth.models import User
 from News.models import Post
+from Users.models import Profile
 
 
 def home(request):
@@ -71,5 +72,5 @@ class StaffView(View):
 
 class StaffDetailView(View):
    def get(self, request, pk):
-      user = get_object_or_404(User, pk=pk)
+      user = get_object_or_404(Profile, pk=pk)
       return render(request, 'ICTapp/staff_detail.html', context={'user': user})

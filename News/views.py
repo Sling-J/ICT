@@ -48,6 +48,7 @@ class NewsDetailView(View):
          'comment_form': comment_form,
          'latest_news': latest_news,
       })
+
    def post(self, request, pk):
       post = get_object_or_404(Post, pk=pk)
       bound_form = CommentForm(request.POST)

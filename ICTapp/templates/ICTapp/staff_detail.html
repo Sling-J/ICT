@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}ICT - {{ user.profile.position }}{% endblock %}
+{% block title %}ICT - {{ user.position }}{% endblock %}
 
 {% block content %}
    <div class="app-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/news-bg.jpg">
@@ -9,7 +9,7 @@
    <section id="teachers-detail" class="teachers-detail flex">
       <div class="teachers-detail-ava-box">
          <div class="teachers-detail-ava__img">
-            <img src="{{ user.profile.img.url }}" alt="ИКТ-учителя">
+            <img src="{{ user.img.url }}" alt="ИКТ-учителя">
          </div>
       </div>
       <div class="teachers-detail-info-box">
@@ -22,15 +22,15 @@
 
             <div class="teachers-detail-responsive-container flex j-sb">
                <p class="teachers-detail-info__name">
-                  {{ user.first_name }} <span>{{ user.last_name }}</span>
+                  {{ user.user.first_name }} <span>{{ user.user.last_name }}</span>
                </p>
                <div class="teachers-detail-responsive-ava__img">
-                  <img src="{{ user.profile.img.url }}" alt="ИКТ-учителя">
+                  <img src="{{ user.img.url }}" alt="ИКТ-учителя">
                </div>
             </div>
 
             <div class="teachers-detail-info__job flex j-sb flex-align-bottom">
-               <p class="teachers-detail-info__job-title">{{ user.profile.position }}</p>
+               <p class="teachers-detail-info__job-title">{{ user.position }}</p>
 
                <div class="teachers-detail-info__links">
                   <a class="transition" href="#">
@@ -52,7 +52,7 @@
             </div>
 
             <p class="text-desc">
-               {{ user.profile.information }}
+               {{ user.information }}
             </p>
 
             <div class="teachers-detail-info__personal-info flex j-sb">
