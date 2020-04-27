@@ -5,7 +5,7 @@
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
+   <title>STUDY - Учебный портал</title>
 
    <!-- Global stylesheets -->
    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
@@ -46,6 +46,39 @@
    <script src="{% static 'js/demo_charts/pages/dashboard/dark/bullets.js' %}"></script>
    <!-- /theme JS files -->
 
+   <style>
+      .week-container {
+         display: flex;
+         margin-bottom: 15px;
+         margin-top: 1px;
+         flex-wrap: wrap;
+      }
+
+      .week-item {
+         background: #353F53;
+         padding: 8px 10px;
+         border-radius: 2px;
+         width: 40px;
+         text-align: center;
+         box-sizing: border-box;
+         transition: all 0.3s;
+         cursor: pointer;
+         margin-bottom: 5px;
+         margin-right: 5.4px;
+      }
+
+      .week-item-active {
+         background: #03A9F4;
+      }
+
+      .week-item:last-child {
+         margin-right: 0;
+      }
+
+      .week-item:hover {
+         background: #03A9F4;
+      }
+   </style>
 </head>
 
 <body>
@@ -98,12 +131,11 @@
       <!-- Sidebar mobile toggler -->
       <div class="sidebar-mobile-toggler text-center">
          <a href="#" class="sidebar-mobile-main-toggle">
-            <i class="icon-arrow-left8"></i>
+            <i class="fas fa-arrow-left"></i>
          </a>
          Navigation
          <a href="#" class="sidebar-mobile-expand">
-            <i class="icon-screen-full"></i>
-            <i class="icon-screen-normal"></i>
+            <i class="fas fa-compress"></i>
          </a>
       </div>
       <!-- /sidebar mobile toggler -->
@@ -122,7 +154,36 @@
                      </a>
                   </div>
 
-                  <div class="media-title font-weight-semibold">Джони Деп</div>
+                  <div class="media-body">
+                     <div class="media-title font-weight-semibold">Джони Деп</div>
+                     <div class="font-size-xs opacity-50">
+                        Казахский
+                     </div>
+                  </div>
+               </div>
+
+               <div class="font-weight-semibold mt-3 mb-2">
+                  Автоматизация и управление
+               </div>
+
+               <div class="font-weight-semibold mb-2">
+                  Учебная кафедра автоматики и информационных технологий
+               </div>
+
+               <div class="font-weight-semibold mb-2">
+                  Факультет информационно-коммуникационных технологий
+               </div>
+
+               <div class="font-weight-semibold">
+                  Курс - <span class="opacity-50">3</span>
+               </div>
+
+               <div class="font-weight-semibold">
+                  Группа - <span class="opacity-50">АУ-701</span>
+               </div>
+
+               <div class="font-weight-semibold">
+                  Форма обучения - <span class="opacity-50">Очное полное (бакалавриат)</span>
                </div>
             </div>
          </div>
@@ -139,7 +200,7 @@
                   <i class="icon-menu" title="Main"></i>
                </li>
                <li class="nav-item">
-                  <a href="index.html" class="nav-link active">
+                  <a href="/semester/" class="nav-link active">
                      <span class="mr-2"><i class="fas fa-home"></i></span>
                      <span>Главная панель</span>
                   </a>
@@ -167,6 +228,25 @@
             <div class="col-xl-8">
 
                <!-- Marketing campaigns -->
+               <h6 class="card-title">Недели</h6>
+
+               <div class="week-container">
+                  <p class="week-item week-item-active">1</p>
+                  <p class="week-item">2</p>
+                  <p class="week-item">3</p>
+                  <p class="week-item">4</p>
+                  <p class="week-item">5</p>
+                  <p class="week-item">6</p>
+                  <p class="week-item">7</p>
+                  <p class="week-item">8</p>
+                  <p class="week-item">9</p>
+                  <p class="week-item">10</p>
+                  <p class="week-item">11</p>
+                  <p class="week-item">12</p>
+                  <p class="week-item">13</p>
+                  <p class="week-item">14</p>
+                  <p class="week-item">15</p>
+               </div>
                <div class="card">
                   <div class="card-header header-elements-sm-inline">
                      <h6 class="card-title">Расписание</h6>
@@ -808,7 +888,27 @@
             <div class="col-xl-4">
                <!-- Daily sales -->
                <div class="card">
-                  <div class="card-header header-elements-inline">
+                  <div class="card-header" style="padding-bottom: 0">
+                     <div class="header-elements">
+                        <div class="mb-2">
+                           <select class="custom-select">
+                              <option value="val1">Выберите группу</option>
+                              <option value="val2">АУ-701</option>
+                              <option value="val3">АУ-703</option>
+                              <option value="val4">АУ-705</option>
+                           </select>
+                        </div>
+
+                        <div>
+                           <select class="custom-select">
+                              <option value="val1">Выберите студента</option>
+                              <option value="val2">Джон Уик</option>
+                              <option value="val3">Джони Деп</option>
+                              <option value="val4">Джон Джонс</option>
+                              <option value="val4">Джон Кеннеди</option>
+                           </select>
+                        </div>
+                     </div>
 
                      <div class="media">
                         <div class="mr-3">
@@ -817,9 +917,11 @@
                            </a>
                         </div>
 
-                        <h6 class="card-title">Джони Деп</h6>
+                        <div>
+                           <h6 class="card-title">Джони Деп</h6>
+                           <div class="text-muted font-size-sm">АУ-701</div>
+                        </div>
                      </div>
-
                   </div>
 
                   <div class="card-body">
@@ -1121,29 +1223,13 @@
       <!-- Footer -->
       <div class="navbar navbar-expand-lg navbar-light">
          <div class="text-center d-lg-none w-100">
-            <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse"
-                    data-target="#navbar-footer">
-               <i class="icon-unfold mr-2"></i>
+            <button type="button" class="navbar-toggler">
                Footer
             </button>
          </div>
 
          <div class="navbar-collapse collapse" id="navbar-footer">
-					<span class="navbar-text">
-						&copy; 2015 - 2018. <a href="#">Limitless Web App Kit</a> by <a
-                      href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
-					</span>
-
-            <ul class="navbar-nav ml-lg-auto">
-               <li class="nav-item"><a href="https://kopyov.ticksy.com/" class="navbar-nav-link" target="_blank"><i
-                      class="icon-lifebuoy mr-2"></i> Support</a></li>
-               <li class="nav-item"><a href="http://demo.interface.club/limitless/docs/" class="navbar-nav-link"
-                                       target="_blank"><i class="icon-file-text2 mr-2"></i> Docs</a></li>
-               <li class="nav-item"><a
-                      href="https://themeforest.net/item/limitless-responsive-web-application-kit/13080328?ref=kopyov"
-                      class="navbar-nav-link font-weight-semibold"><span class="text-pink-400"><i
-                      class="icon-cart2 mr-2"></i> Purchase</span></a></li>
-            </ul>
+            <span class="navbar-text">&copy; 2020</span>
          </div>
       </div>
       <!-- /footer -->
