@@ -10,6 +10,7 @@ urlpatterns = [
     path('', include('ICTapp.urls')),
     path('news/', include('News.urls')),
     path('account/', include('Users.urls')),
+    path('semester/', include('semesters.urls'))
 ]
 
 if settings.DEBUG == True:

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'ICTapp.apps.IctappConfig',
     'News.apps.NewsConfig',
     'Users.apps.UsersConfig',
+    'semesters'
 ]
 
 MIDDLEWARE = [
